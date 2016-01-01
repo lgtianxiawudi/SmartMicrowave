@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:background="@drawable/level_bg"
+    android:background="@drawable/item_bg_two"
     android:layout_gravity="top"
     android:gravity="top">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="fill_parent"
+        android:layout_width="100dip"
         android:layout_height="100dip"
         android:scaleType="centerInside"
         android:textColor="#FFFFFF"
@@ -17,11 +17,11 @@
 
     <TextView
         android:id="@+id/content"
-        android:layout_width="fill_parent"
+        android:layout_width="100dip"
         android:layout_height="300dip"
         android:gravity="center|center_vertical"
         android:layout_gravity="center_vertical"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="20dip" />
 
 </LinearLayout>
