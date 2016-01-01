@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/head" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="3"
+        android:gravity="center_vertical" >
+
+        <RadioGroup
+            android:id="@+id/type_select"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rehear_ok"
+                android:layout_width="0dip"
+                android:layout_height="60dip"
+                android:layout_weight="1"
+                android:text="@string/rehear_ok"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="5dip"
+                android:gravity="center"
+                android:background="@drawable/type_select_bg"
+                android:button="@null"
+                android:checked="true"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <RadioButton
+                android:id="@+id/rehear_no"
+                android:layout_width="0dip"
+                android:layout_height="60dip"
+                android:layout_weight="1"
+                android:text="@string/rehear_no"
+               android:layout_marginLeft="5dip"
+                android:layout_marginRight="10dip"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/type_select_bg"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        layout="@layout/bottom_two" />
+
+</LinearLayout>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ctl.smart.microwave"
+    coreApp="true"
+    android:versionCode="1"
+    android:versionName="1.0">
+    
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:name="com.ctl.smart.microwave.application.SmartApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AnimActivityTheme" >
+        <activity
+            android:name="com.ctl.smart.microwave.activity.LauncherActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.activity.MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.activity.CookingActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.activity.CookingPositionActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.activity.RemindAddWaterActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="com.ctl.smart.microwave.automenu.FirstLevelAutoMenuActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.automenu.SecondLevelAutoMenuActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.automenu.ThirdLevelAutoMenuActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.automenu.FourLevelAutoMenuActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.automenu.FiveLevelAutoMenuActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.reheart.FirstLevelReHeartActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.reheart.SecondLevelReHeartActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.reheart.ChoiceTypeReHeartActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.reheart.PreperHearActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.reheart.PreperHearFinish"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.reheart.CookingPrepareActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.reheart.CookingTimeSettingActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="com.ctl.smart.microwave.defrost.FirstLevelDefrostActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.defrost.SecondLevelDefrostActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        
+        <activity
+            android:name="com.ctl.smart.microwave.snack.FirstLevelSnackActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.snack.SecondLevelSnackActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        
+        <activity
+            android:name="com.ctl.smart.microwave.ferment.SecondLevelFermentActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.ferment.FermentFinishActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.ferment.FermentPositionActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.ferment.FermentingActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.ferment.FirstLevelFermentActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="com.ctl.smart.microwave.healthybaby.FirstLevelHealthyBabyActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.healthybaby.SecondLevelHealthyBabyActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="com.ctl.smart.microwave.activity.CookingFinish"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="com.ctl.smart.microwave.setting.SystemSettings"
+            android:label="@string/settings_lable" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="com.ctl.smart.microwave.setting.DateTimeSettings"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.setting.DisplaySettings"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.setting.TouchSoundSettings"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.setting.ClockModeSettings"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.setting.InteriorlightSettings"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.setting.WarmTimeSettings"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+	
+	<activity
+            android:name="com.ctl.smart.microwave.deodorize.FirstDeodorizeActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.deodorize.SecondDeodorizeActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.deodorize.DeodorizeFinishActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="com.ctl.smart.microwave.disinfect.DisinfectFinishActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.disinfect.FirstDisinfectActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.disinfect.SeondDisinfectActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.disinfect.ThreeDisinfectActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="com.ctl.smart.microwave.cavityclean.CavitycleanFinishActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.cavityclean.FirstCavitycleanActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.cavityclean.SeondCavitycleanActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.cavityclean.ThreeCavitycleanActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name="com.ctl.smart.microwave.favorite.FavoriteActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+    </application>
+
+</manifest>

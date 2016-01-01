@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SmartWave</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="data_name">data_en.xls</string>
+    <!-- main -->
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="automatic_menu">Auto Menu</string>
+    <string name="heat_up">Reheat</string>
+    <string name="thaw">Defrost</string>
+    <string name="snacks">Snack</string>
+    <string name="fermentation">Ferment</string>
+    <string name="taste_removal">Deodorize</string>
+    <string name="sterilize">Disinfect</string>
+    <string name="healthy_baby">Healthybaby</string>
+    <string name="cavity_clean">Steam cleaning</string>
+    <string name="favorites">Myfavorite</string>
+    <string name="system">SystemSetting</string>
+    
+    <string name="cook_status">Cooking has ended...</string>
+    <string name="cook_status_two">Defrost has ended...</string>
+    <string name="cook_remind">Remove the food, carefully hot~</string>
+    <string name="cook_stopping">Stopping......</string>
+    <string name="cook_starting">Starting......</string>
+    <string name="thaw_starting">Thawing......</string>
+    <string name="ferment_starting"> Fermentation......</string>
+    <string name="rehart_starting">Preheating......</string>
+     <string name="reheart_starting">Rehearting</string>
+    <string name="cook_temperature">95°C</string>
+    
+    <string name="deodorize_title">taste removal</string>
+    <string name="deodorize_time">After five seconds countdown starts</string>
+    <string name="deodorize_warn">taste removaling......</string>
+    
+    <string name="start_time">after start......</string>
+    <string name="add_water">Please add water</string>
+    <string name="remind_water">Please confirm the adequacy of the water in water？</string>
+    <string name="point">•</string>
+    
+	
+    <string name="position_remind">Shelf position</string>
+    <string name="back_remind">Do you want to stop cooking and return to the higher menu？</string>
+    <string-array name="week">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <!-- child -->
+    <string name="ok">OK</string>
+    <string name="save">favorite</string>
+    <string name="delete_fav">delete</string>
+    <string name="save_fav_toase">You collect the </string>
+    <string name="delete_fav_toase">You delete the collection </string>
+    <string name="remind">remind</string>
+    <string name="remind_message">Are you sure to delete collection </string>
+    <!-- child auto menu -->
+    <string-array name="auton_menu_level1">
+        <item>Dishes</item>
+        <item>Ingredients</item>
+    </string-array>
+    <string-array name="auton_menu_level2_0">
+        <item>Chinese food</item>
+        <item>Western Food</item>
+    </string-array>
+    <string-array name="auton_menu_level2_1">
+        <item>Dumpling</item>
+        <item>Bun</item>
+        <item>Meat</item>
+        <item>Fish</item>
+        <item>Seafood</item>
+        <item>Root vegetables</item>
+        <item>Green leafy vegetables</item>
+        <item>Egg</item>
+        <item>Steamed buns</item>
+        <item>Rice</item>
+    </string-array>
+    <string-array name="auton_menu_level3_0_1">
+        <item>Italian seafood roll</item>
+        <item>Fried sirloin steak</item>
+        <item>French eye steak</item>
+        <item>Spain steak</item>
+        <item>Pork grill</item>
+        <item>hamburgers</item>
+        <item>Grilled chicken leg</item>
+        <item>pizza</item>
+    </string-array>
+    <string-array name="auton_menu_level3_0_0">
+        <item>Mushroom chicken slip</item>
+        <item>Steamed pork ribs</item>
+        <item>Steamed fish</item>
+        <item>Steamed custard</item>
+        <item>Mung bean porridge</item>
+        <item>Thin white porridge</item>
+        <item>Millet gruel</item>
+    </string-array>
+    <string-array name="auton_menu_level3_1_0">
+        <item>Gruel</item>
+        <item>Cook</item>
+        <item>Roasted</item>
+        <item>Steam</item>
+        <item>Tonga</item>
+        <item >Food</item>
+    </string-array>
+    <string-array name="auton_menu_level4">
+        <item>100\ng</item>
+        <item>200\ng</item>
+        <item>300\ng</item>
+        <item>400\ng</item>
+        <item>500\ng</item>
+    </string-array>
+    <!-- child reheart menu -->
+    <string-array name="reheart_level1">
+        <item>Steam•Suitable for cooking food</item>
+        <item>HotAir Convection•Apply to fried food</item>
+        <item>Frequency Microwave•Suitable for rapid heating</item>
+        <item>Milk</item>
+        <item>Coffee</item>
+        <item>Drinks</item>
+    </string-array>
+    <string-array name="reheart_level2_0">
+        <item>30\n°C</item>
+        <item>40\n°C</item>
+        <item>50\n°C</item>
+        <item>60\n°C</item>
+        <item>70\n°C</item>
+        <item>80\n°C</item>
+        <item>90\n°C</item>
+        <item>100\n°C</item>
+    </string-array>
+    <string-array name="reheart_level2_1">
+        <item>100\nW</item>
+        <item>200\nW</item>
+        <item>300\nW</item>
+        <item>400\nW</item>
+        <item>500\nW</item>
+        <item>600\nW</item>
+        <item>700\nW</item>
+        <item>800\nW</item>
+        <item>900\nW</item>
+        <item>1000\nW</item>
+    </string-array>
+    <string-array name="reheart_level2_2">
+        <item>30\n°C</item>
+        <item>40\n°C</item>
+        <item>50\n°C</item>
+        <item>60\n°C</item>
+        <item>70\n°C</item>
+        <item>80\n°C</item>
+        <item>90\n°C</item>
+        <item>100\n°C</item>
+        <item>110\n°C</item>
+        <item>120\n°C</item>
+        <item>130\n°C</item>
+        <item>140\n°C</item>
+        <item>150\n°C</item>
+        <item>160\n°C</item>
+        <item>170\n°C</item>
+        <item>180\n°C</item>
+        <item>190\n°C</item>
+        <item>200\n°C</item>
+        <item>210\n°C</item>
+        <item>220\n°C</item>
+        <item>230\n°C</item>
+    </string-array>
+    <string name="rehear_ok">preheating</string>
+    <string name="rehear_no">No preheating</string>
+    <string name="reheart_time">Warm up time</string>
+    <string name="rehart_status">Preheat the end, please add ingredients.....</string>
+    <!-- defrost menu -->
+    <string-array name="defrost_level1">
+        <item>Microwave•Rapid thawing</item>
+        <item>Microwave+Steam•Maintain moisture</item>
+    </string-array>
+    <string-array name="defrost_level2">
+        <item>100\ng</item>
+        <item>200\ng</item>
+        <item>300\ng</item>
+        <item>400\ng</item>
+        <item>500\ng</item>
+    </string-array>
+    
+    <!-- snacks menu -->
+    <string-array name="snacks_level1">
+        <item>Cake</item>
+        <item>Bread</item>
+        <item>Biscuit</item>
+        <item>Jam</item>
+        <item>Sweet Potato</item>
+        <item>Beef jerky</item>
+        <item>Popcorn</item>
+        <item>To GuaGan</item>
+        <item>Butter cookies</item>
+        <item>Egg biscuit</item>
+        <item>Cream cheese and crackers</item>
+    </string-array>
+    <string-array name="snacks_level2">
+        <item>100\ng</item>
+        <item>200\ng</item>
+        <item>300\ng</item>
+        <item>400\ng</item>
+        <item>500\ng</item>
+    </string-array>
+    
+    <!-- ferment menu -->
+    <string-array name="ferment_level1">
+        <item>Yogurt</item>
+        <item>Dough</item>
+    </string-array>
+    <string-array name="ferment_level2">
+        <item>100\ng</item>
+        <item>200\ng</item>
+        <item>300\ng</item>
+        <item>400\ng</item>
+        <item>500\ng</item>
+    </string-array>
+    
+    <!-- healthybaby menu -->
+    <string-array name="healthybaby_level1">
+        <item>Carrot mud</item>
+        <item>Baby water egg</item>
+        <item>Baby puree</item>
+    </string-array>
+    <string-array name="healthybaby_level2">
+        <item>100\ng</item>
+        <item>200\ng</item>
+        <item>300\ng</item>
+        <item>400\ng</item>
+        <item>500\ng</item>
+    </string-array>
+    
+    <!-- settings menu -->
+    <string name="settings_lable">System Settings</string>
+	<string name="settings_date">Date and time</string>
+	<string name="settings_display">Display</string>
+	<string name="settings_touchsound">Touch Sound</string>
+	<string name="settings_clock">Clock Display</string>
+	<string name="settings_interiorlight">Interior Light</string>
+	<string name="settings_warmtime">Warm Time</string>
+	
+	<string name="settings_childlock">Child Lock</string>
+	<string name="settings_help">Help</string>
+	<string name="settings_displaylogo">Display Logo</string>
+	<string name="settings_reset">Factory data reset</string>
+	
+	<string name="date_autoset">Auto Set</string>
+	<string name="date_set">Date</string>
+	<string name="time_set">Time</string>
+	<string name="time_mode">24 Hours Mode</string>
+	<string name="time_am">am</string>
+	<string name="time_pm">pm</string>
+	
+	<string name="disp_light">Display Light</string>
+	<string name="disp_time">Display Time</string>
+	<string name="disp_font">Display Font</string>
+	
+	<string name="disp_warn">Drag the slider below</string>
+	<string name="disp_lower">Lower</string>
+	<string name="disp_plus">Plus</string>
+	
+	<string name="touchsound_title">Touch Sound</string>
+	
+	<string name="timeset_h">Hours</string>
+	<string name="timeset_m">Minute</string>
+	<string name="timeset_s">Second</string>
+	<string name="timeset_warn">Tips: This feature requires at least? Minute</string>
+	
+	<string name="disp_time_1">Always On</string>
+	<string name="disp_time_2">5 minutes after turning off</string>
+	
+	<string-array name="disinfect_level1">
+        <item>Tableware disinfection</item>
+        <item>Cavity sterilization</item>
+        <item>Bottle disinfection</item>
+    </string-array>
+    <!-- cavityclean menu -->
+    <string-array name="cavityclean_level1">
+        <item>Steam cleaning</item>
+        <item>Cavity cleaning</item>
+    </string-array>
+    
+    <string name="clock_mode1">Analog Mode</string>
+	<string name="clock_mode2">Digital Mode</string>
+    
+    <string name="interLight_set1">After cooking start</string>
+	<string name="interLight_set2">After 1 minute off</string>
+	<string name="interLight_set3">After 2 minute off</string>
+	<string name="interLight_set4">After 3 minute off</string>
+	<string name="interLight_set5">Been closed</string>
+	
+	<string name="warm_time1">5 minute</string>
+	<string name="warm_time2">10 minute</string>
+	<string name="warm_time3">15 minute</string>
+    
+    <string name="clean_detail">水＋醋，比例为10:1（？）</string>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginBottom="10dip"
+        android:layout_weight="1"
+        android:background="@drawable/child_button_bg"
+        android:text="@string/ok"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/back_main"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="5dip"
+            android:layout_weight="1"
+            android:background="@drawable/main_button_bg"
+            android:padding="10dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/save"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/main_button_bg"
+            android:padding="10dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/back_logo"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

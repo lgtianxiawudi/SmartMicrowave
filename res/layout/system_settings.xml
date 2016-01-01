@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/system_set"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/view_bg"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/head" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="3.5"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <ListView
+                android:id="@+id/setting_list_pref"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical" 
+                android:layout_weight="3"
+                android:background="@android:color/background_light"
+                android:listSelector="@drawable/list_selector_flatcolor">
+            </ListView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip" 
+                android:layout_weight="0.5">
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/setting_list_switch"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical" 
+                android:layout_weight="3"
+                android:background="@android:color/background_light"
+                android:listSelector="@drawable/list_selector_flatcolor">
+            </ListView>
+        </LinearLayout>
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="0.5"
+        layout="@layout/bottom_two" />
+
+</LinearLayout>

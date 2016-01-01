@@ -1,0 +1,42 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="Widget" parent="android:Widget"></style>
+
+    
+    <style name="FeelyouWindowAnimTheme" parent="@android:style/Animation.Activity">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/out_from_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/in_from_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_from_right</item>
+        
+    	<item name="android:taskOpenEnterAnimation">@anim/in_from_right</item>
+        <item name="android:taskOpenExitAnimation">@anim/out_from_left</item>
+        <item name="android:taskCloseEnterAnimation">@anim/in_from_left</item>
+        <item name="android:taskCloseExitAnimation">@anim/out_from_right</item>
+        
+        <item name="android:taskToFrontEnterAnimation">@anim/in_from_right</item>
+        <item name="android:taskToFrontExitAnimation">@anim/out_from_left</item>
+        <item name="android:taskToBackEnterAnimation">@anim/in_from_left</item>
+        <item name="android:taskToBackExitAnimation">@anim/out_from_right</item>
+    </style>
+
+    <style name="AnimActivityTheme" parent="@android:style/Theme">
+        <item name="android:windowAnimationStyle">@style/FeelyouWindowAnimTheme</item>
+    </style>
+    
+    <style name="Widget.SeekBar.Normal" parent="@android:style/Widget.SeekBar">
+        <item name="android:maxHeight">8.0dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/seekbar_horizontal</item>
+        <item name="android:minHeight">8.0dip</item>
+        <item name="android:thumb">@drawable/seek_thumb</item>
+        <item name="android:thumbOffset">2dip</item>
+    </style>
+
+    <style name="MyProgressBar">
+        <item name="android:minHeight">40dip</item>
+        <item name="android:maxHeight">40dip</item>
+    </style>
+</resources>

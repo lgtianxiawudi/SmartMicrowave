@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_light"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/head" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_gravity="center"
+        android:layout_weight="3" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/staue"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/cook_stopping"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="24dip"
+                android:visibility="visible" />
+
+            <com.ctl.smart.microwave.views.CircleImageView
+                android:id="@+id/cooking_logo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:background="@drawable/cirle_bg"
+                android:scaleType="center" />
+
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dip"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/cook_temperature"
+                android:textColor="#FFFFFF"
+                android:textSize="24dip"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:visibility="invisible" />
+        </LinearLayout>
+        <TextView 
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/add_water"
+            android:background="#FFFFFF"
+           android:textColor="#FF0000"
+           android:gravity="center"
+           android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/add_water"
+            android:alpha="0.7"></TextView>
+    </FrameLayout>
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        layout="@layout/bottom_three" />
+
+</LinearLayout>
