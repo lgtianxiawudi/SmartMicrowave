@@ -20,4 +20,12 @@
             <enum name="auto" value="2147483647" />
         </attr>
     </declare-styleable>
+    <declare-styleable name="RefreshProgress">
+        <attr name="bigCircleRadius" format="integer"></attr>
+        <attr name="smallCircleRadius" format="integer"></attr>
+        <attr name="bigCircleRadiusStrokeWidth" format="integer"></attr>
+        <attr name="cirCleBitmap" format="reference"></attr>
+        <attr name = "startColor" format = "color" /> 
+        <attr name = "endColor" format = "color" /> 
+    </declare-styleable>
 </resources>

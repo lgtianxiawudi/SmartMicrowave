@@ -1,15 +1,7 @@
 package com.ctl.smart.microwave.activity;
 
 import java.util.Map;
-import android.content.res.Resources.NotFoundException;
-import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.text.TextUtils;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.content.Intent;
+
 import com.ab.activity.AbActivity;
 import com.ab.util.AbToastUtil;
 import com.ab.view.ioc.AbIocView;
@@ -23,16 +15,23 @@ import com.ctl.smart.microwave.utils.ExcelUtil;
 import com.ctl.smart.microwave.utils.HeadUtil;
 import com.ctl.smart.microwave.utils.TextViewUtils;
 import com.ctl.smart.microwave.utils.TimeInit;
-import com.ctl.smart.microwave.views.CircleImageView;
-import android.util.Log;
-import android.view.WindowManager;
-import android.view.KeyEvent;
+import com.ctl.smart.microwave.views.RefreshProgress;
+
 import android.content.BroadcastReceiver;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources.NotFoundException;
+import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.PowerManager;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 //import com.ctl.smart.microwave.utils.BottomUtilThree.MyCount;
 
@@ -51,7 +50,7 @@ public class CookingActivity extends AbActivity implements
 	@AbIocView(id = R.id.temperature)
 	private TextView temperature;
 	@AbIocView(id = R.id.cooking_logo)
-	private CircleImageView cooking_logo;
+	private RefreshProgress cooking_logo;
 	private ServiceReceivier mServiceReceivier;
 
 	private BottomUtilThree bottomUtilThree;
@@ -80,7 +79,7 @@ public class CookingActivity extends AbActivity implements
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.cooking);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		acquireWakeLock();
+//		acquireWakeLock();
 
 		Bundle bundle = getIntent().getExtras();
 		if (bundle != null) {
@@ -186,7 +185,7 @@ public class CookingActivity extends AbActivity implements
 
 		try {
 			System.out.println(imageid);
-			cooking_logo.setImageBitmap(BitmapUtil.readBitMap(this,
+			cooking_logo.setCirCleBitmap(BitmapUtil.readBitMap(this,
 					DataInit.getDataByKey(imageid)));
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
@@ -218,7 +217,7 @@ public class CookingActivity extends AbActivity implements
 		switch (status) {
 		case BottomUtilThree.PAUSE: {
 			statu.setText(R.string.cook_stopping);
-			cooking_logo.pauseAnimation();
+			cooking_logo.stop();
 		    sendLedToService("7RR\n");
 			sendBroadcastPauseToService(type,time,temperatureStr);
 		}
@@ -227,7 +226,7 @@ public class CookingActivity extends AbActivity implements
 			add_water.setVisibility(View.INVISIBLE);
 			fanmian.setVisibility(View.INVISIBLE);
 			statu.setText(statusID);
-			cooking_logo.startAnimation();
+			cooking_logo.start();
 			//onRun();
 			sendLedToService("7BR\n");
 		    sendBroadcastToService(type,time,temperatureStr);

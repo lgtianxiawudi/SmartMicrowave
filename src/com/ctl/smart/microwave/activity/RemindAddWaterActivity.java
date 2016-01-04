@@ -1,10 +1,5 @@
 package com.ctl.smart.microwave.activity;
 
-import android.content.res.Resources.NotFoundException;
-import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-
 import com.ab.activity.AbActivity;
 import com.ab.view.ioc.AbIocView;
 import com.ctl.smart.microwave.R;
@@ -13,7 +8,12 @@ import com.ctl.smart.microwave.utils.BottomUtilTwo;
 import com.ctl.smart.microwave.utils.DataInit;
 import com.ctl.smart.microwave.utils.HeadUtil;
 import com.ctl.smart.microwave.utils.StartActivityUtil;
-import com.ctl.smart.microwave.views.CircleImageView;
+import com.ctl.smart.microwave.views.RefreshProgress;
+
+import android.content.res.Resources.NotFoundException;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.WindowManager;
 
 public class RemindAddWaterActivity extends AbActivity implements OnClickListener{
@@ -25,7 +25,7 @@ private Bundle bundle;
 private String imageid = "";
 
 @AbIocView(id = R.id.cooking_logo)
-private CircleImageView cooking_logo;
+private RefreshProgress cooking_logo;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
 
 try {
 	System.out.println(imageid);
-	cooking_logo.setImageBitmap(BitmapUtil.readBitMap(this, DataInit.getDataByKey(imageid)));
+	cooking_logo.setCirCleBitmap(BitmapUtil.readBitMap(this, DataInit.getDataByKey(imageid)));
 } catch (NotFoundException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();

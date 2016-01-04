@@ -2,13 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ctl.smart.microwave"
     coreApp="true"
-    android:sharedUserId="android.uid.system"
     android:versionCode="2"
     android:versionName="0.3.13">
     
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -26,9 +24,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-               <category android:name="android.intent.category.HOME" />
-               <category android:name="android.intent.category.DEFAULT" />
-               <category android:name="android.intent.category.MONKEY"/>
+               <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -273,7 +269,6 @@
             android:screenOrientation="portrait">
         </activity>
         
-         <service android:name="com.ctl.smart.microwave.service.MicroWaveService" android:enabled="true" />
     </application>
 
 </manifest>

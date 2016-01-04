@@ -1,13 +1,6 @@
 package com.ctl.smart.microwave.ferment;
 
 import java.util.Map;
-import android.content.res.Resources.NotFoundException;
-import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.text.TextUtils;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.TextView;
 
 import com.ab.activity.AbActivity;
 import com.ab.util.AbToastUtil;
@@ -22,8 +15,16 @@ import com.ctl.smart.microwave.utils.ExcelUtil;
 import com.ctl.smart.microwave.utils.HeadUtil;
 import com.ctl.smart.microwave.utils.TextViewUtils;
 import com.ctl.smart.microwave.utils.TimeInit;
-import com.ctl.smart.microwave.views.CircleImageView;
+import com.ctl.smart.microwave.views.RefreshProgress;
+
+import android.content.res.Resources.NotFoundException;
+import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 public class FermentingActivity extends AbActivity implements
 		onChangeStaueListener {
@@ -39,7 +40,7 @@ public class FermentingActivity extends AbActivity implements
 	@AbIocView(id = R.id.temperature)
 	private TextView temperature;
 	@AbIocView(id = R.id.cooking_logo)
-	private CircleImageView cooking_logo;
+	private RefreshProgress cooking_logo;
 
 	private BottomUtilThree bottomUtilThree;
 
@@ -90,7 +91,7 @@ public class FermentingActivity extends AbActivity implements
 		HeadUtil headUtil = new HeadUtil(this).setTitleName(name);
 		try {
 			System.out.println(imageid);
-			cooking_logo.setImageBitmap(BitmapUtil.readBitMap(this,
+			cooking_logo.setCirCleBitmap(BitmapUtil.readBitMap(this,
 					DataInit.getDataByKey(imageid)));
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
@@ -116,12 +117,12 @@ public class FermentingActivity extends AbActivity implements
 		switch (status) {
 		case BottomUtilThree.PAUSE: {
 			statu.setText(R.string.cook_stopping);
-			cooking_logo.pauseAnimation();
+			cooking_logo.stop();;
 		}
 			break;
 		case BottomUtilThree.RUN: {
 			statu.setText(R.string.ferment_starting);
-			cooking_logo.startAnimation();
+			cooking_logo.start();;
 			onRun();
 		}
 			break;

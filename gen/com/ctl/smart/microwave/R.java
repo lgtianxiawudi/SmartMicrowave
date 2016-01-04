@@ -136,7 +136,23 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int animationDuration=0x7f01000e;
+        public static final int animationDuration=0x7f010014;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int bigCircleRadius=0x7f01000b;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int bigCircleRadiusStrokeWidth=0x7f01000d;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -184,16 +200,29 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int border_width=0x7f010003;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int cirCleBitmap=0x7f01000e;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int endColor=0x7f010010;
         /**  Reference to an array resource that will populate a list/adapter. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int entries=0x7f01000b;
+        public static final int entries=0x7f010011;
         /**  Default Gallery style. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int galleryStyle=0x7f01000d;
+        public static final int galleryStyle=0x7f010013;
         /**  Specifies how to place the content of an object, both
          on the x- and y-axis, within the object itself. 
          <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -222,7 +251,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
              edge, a right gravity will clip the left edge, and neither will clip both edges. </td></tr>
 </table>
          */
-        public static final int gravity=0x7f01000c;
+        public static final int gravity=0x7f010012;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -239,6 +268,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int scaleDownGravity=0x7f010009;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int smallCircleRadius=0x7f01000c;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -248,7 +285,16 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int spacing=0x7f01000f;
+        public static final int spacing=0x7f010015;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int startColor=0x7f01000f;
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -877,7 +923,7 @@ containing a value of this type.
            @see #AbsSpinner_entries
          */
         public static final int[] AbsSpinner = {
-            0x7f01000b
+            0x7f010011
         };
         /**
           <p>
@@ -1070,7 +1116,7 @@ containing a value of this type.
            @see #Gallery_spacing
          */
         public static final int[] Gallery = {
-            0x7f01000c, 0x7f01000e, 0x7f01000f
+            0x7f010012, 0x7f010014, 0x7f010015
         };
         /**
           <p>
@@ -1141,6 +1187,112 @@ containing a value of this type.
           @attr name com.ctl.smart.microwave:spacing
         */
         public static final int Gallery_spacing = 2;
+        /** Attributes that can be used with a RefreshProgress.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #RefreshProgress_bigCircleRadius com.ctl.smart.microwave:bigCircleRadius}</code></td><td></td></tr>
+           <tr><td><code>{@link #RefreshProgress_bigCircleRadiusStrokeWidth com.ctl.smart.microwave:bigCircleRadiusStrokeWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #RefreshProgress_cirCleBitmap com.ctl.smart.microwave:cirCleBitmap}</code></td><td></td></tr>
+           <tr><td><code>{@link #RefreshProgress_endColor com.ctl.smart.microwave:endColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #RefreshProgress_smallCircleRadius com.ctl.smart.microwave:smallCircleRadius}</code></td><td></td></tr>
+           <tr><td><code>{@link #RefreshProgress_startColor com.ctl.smart.microwave:startColor}</code></td><td></td></tr>
+           </table>
+           @see #RefreshProgress_bigCircleRadius
+           @see #RefreshProgress_bigCircleRadiusStrokeWidth
+           @see #RefreshProgress_cirCleBitmap
+           @see #RefreshProgress_endColor
+           @see #RefreshProgress_smallCircleRadius
+           @see #RefreshProgress_startColor
+         */
+        public static final int[] RefreshProgress = {
+            0x7f01000b, 0x7f01000c, 0x7f01000d, 0x7f01000e,
+            0x7f01000f, 0x7f010010
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.ctl.smart.microwave.R.attr#bigCircleRadius}
+          attribute's value can be found in the {@link #RefreshProgress} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.ctl.smart.microwave:bigCircleRadius
+        */
+        public static final int RefreshProgress_bigCircleRadius = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.ctl.smart.microwave.R.attr#bigCircleRadiusStrokeWidth}
+          attribute's value can be found in the {@link #RefreshProgress} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.ctl.smart.microwave:bigCircleRadiusStrokeWidth
+        */
+        public static final int RefreshProgress_bigCircleRadiusStrokeWidth = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.ctl.smart.microwave.R.attr#cirCleBitmap}
+          attribute's value can be found in the {@link #RefreshProgress} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.ctl.smart.microwave:cirCleBitmap
+        */
+        public static final int RefreshProgress_cirCleBitmap = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.ctl.smart.microwave.R.attr#endColor}
+          attribute's value can be found in the {@link #RefreshProgress} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.ctl.smart.microwave:endColor
+        */
+        public static final int RefreshProgress_endColor = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.ctl.smart.microwave.R.attr#smallCircleRadius}
+          attribute's value can be found in the {@link #RefreshProgress} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.ctl.smart.microwave:smallCircleRadius
+        */
+        public static final int RefreshProgress_smallCircleRadius = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.ctl.smart.microwave.R.attr#startColor}
+          attribute's value can be found in the {@link #RefreshProgress} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.ctl.smart.microwave:startColor
+        */
+        public static final int RefreshProgress_startColor = 4;
         /** Attributes that can be used with a roundedimageview.
            <p>Includes the following attributes:</p>
            <table>
