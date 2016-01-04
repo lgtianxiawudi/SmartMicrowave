@@ -10,7 +10,7 @@
         android:layout_height="0dip"
         android:layout_marginBottom="10dip"
         android:layout_weight="1"
-        android:background="@drawable/child_button_bg"
+        android:background="@drawable/main_button_bg"
         android:text="@string/ok"
         android:textColor="#FFFFFF"
         android:textAppearance="?android:attr/textAppearanceLarge"

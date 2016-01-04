@@ -28,8 +28,6 @@ import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
@@ -64,8 +62,8 @@ public class FancyCoverFlowSampleAdapter extends FancyCoverFlowAdapter {
 		super();
 		this.content = content;
 		this.context = context;
-		this.height = height;
-		this.width = width / 5;
+		this.height = height - 100;
+		this.width = width / 4;
 	}
 	private int  currentSelectItem=0;
 
@@ -126,14 +124,19 @@ public class FancyCoverFlowSampleAdapter extends FancyCoverFlowAdapter {
 			holder.content = (TextView) reuseableView
 					.findViewById(R.id.content);
 			holder.logo = (ImageView) reuseableView.findViewById(R.id.logo);
+			holder.bottom_item=(ImageView) reuseableView.findViewById(R.id.bottom_item);
 			TextViewUtils.setCommonSize(holder.content);
 //			if (isSingle) {
 //				int padd = this.width / 3;
 //				holder.content.setPadding(padd, 0, padd, 0);
 //			}
+			
+			holder.bottom_item.setLayoutParams(new LinearLayout.LayoutParams(
+					this.width, 100));
 
 			reuseableView.setLayoutParams(new FancyCoverFlow.LayoutParams(
 					this.width, FancyCoverFlow.LayoutParams.MATCH_PARENT));
+			
 			reuseableView.setTag(holder);
 		}
 		Bitmap bitmap=BitmapUtil.readBitMap(context, DataInit.getDataByKey(content[i]));
@@ -142,9 +145,9 @@ public class FancyCoverFlowSampleAdapter extends FancyCoverFlowAdapter {
 			holder.logo.setImageBitmap(bitmap);
 			holder.logo.setScaleType(ScaleType.FIT_XY);
 			holder.logo.setLayoutParams(new LinearLayout.LayoutParams(
-					this.width, height / 5));
+					this.width, height / 2));
 			holder.content.setLayoutParams(new LinearLayout.LayoutParams(
-					this.width, height - 100));
+					this.width, height / 2));
 		} else {
 			holder.logo.setVisibility(View.GONE);
 			holder.content.setLayoutParams(new LinearLayout.LayoutParams(
@@ -190,6 +193,7 @@ public class FancyCoverFlowSampleAdapter extends FancyCoverFlowAdapter {
 	private static class ViewHolder {
 		ImageView logo;
 		TextView content;
+		ImageView bottom_item;
 	}
 	
 	public void setPostionContent(int position,String contetnP){

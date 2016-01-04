@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ctl.smart.microwave"
     coreApp="true"
-    android:versionCode="2"
+    android:versionCode="3"
     android:versionName="0.3.13">
     
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
