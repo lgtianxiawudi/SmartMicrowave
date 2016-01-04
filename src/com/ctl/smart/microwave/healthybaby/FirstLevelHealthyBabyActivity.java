@@ -27,7 +27,6 @@ public class FirstLevelHealthyBabyActivity extends AbActivity implements
 
 	private String item[] = null;
 
-	private int[] ImageId;
 
 	private String name;
 	private FancyCoverFlowSampleAdapter adapter = null;
@@ -48,8 +47,6 @@ public class FirstLevelHealthyBabyActivity extends AbActivity implements
 		HeadUtil headUtil = new HeadUtil(this,true).setTitleName(name);
 
 		item = ExcelUtil.getKindsByKey(name);
-		ImageId = new int[] { R.drawable.image29, R.drawable.image30,
-				R.drawable.image31 };
 		this.fancyCoverFlow.setUnselectedAlpha(0.8f);
 		this.fancyCoverFlow.setUnselectedSaturation(0.0f);
 		this.fancyCoverFlow.setUnselectedScale(0.5f);

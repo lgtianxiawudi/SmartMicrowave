@@ -52,7 +52,7 @@ public class CookingFinish extends AbActivity {
 			String content=bundle.getString("content");
 			if (!TextUtils.isEmpty(content)) {
 				statu.setText(content+"");
-				remind.setVisibility(View.INVISIBLE);
+				remind.setVisibility(View.GONE);
 			}
 		}
 		HeadUtil headUtil = new HeadUtil(this).setTitleName(name);

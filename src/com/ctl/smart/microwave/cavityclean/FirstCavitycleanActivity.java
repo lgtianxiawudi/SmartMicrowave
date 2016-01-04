@@ -12,7 +12,7 @@ import at.technikum.mti.fancycoverflow.FancyCoverFlow;
 
 import com.ab.activity.AbActivity;
 import com.ab.view.ioc.AbIocView;
-import com.ab.view.wheel.AbWheelView;
+import com.ctl.smart.microwave.views.AbWheelView;
 import com.ctl.smart.microwave.R;
 import com.ctl.smart.microwave.activity.CookingActivity;
 import com.ctl.smart.microwave.adapter.FancyCoverFlowSampleAdapter;
@@ -62,7 +62,7 @@ public class FirstCavitycleanActivity extends AbActivity implements OnClickListe
 		if (bundle != null) {
 			name = bundle.getString("title");
 		}
-		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener().setback_mainListener();
+		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener().setback_mainListener().setOkListener(this);
 		HeadUtil headUtil = new HeadUtil(this).setTitleName(name);
 		WheelUtils.initWheelDatePicker(this, hour, mint, send);
 		remind.setVisibility(View.INVISIBLE);

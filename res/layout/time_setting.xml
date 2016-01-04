@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/bg2"
     android:orientation="vertical" >
 
     <include
@@ -70,29 +70,27 @@
             android:gravity="center"
             android:orientation="horizontal" >
 
-            <com.ab.view.wheel.AbWheelView
+            <com.ctl.smart.microwave.views.AbWheelView
                 android:id="@+id/wheelViewh"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:visibility="gone"
-                android:background="@drawable/wheel_bg_1" />
+                android:background="@drawable/finish_text_bg" />
 
-            <com.ab.view.wheel.AbWheelView
+            <com.ctl.smart.microwave.views.AbWheelView
                 android:id="@+id/wheelViewm"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dip"
-                android:layout_marginRight="5dip"
                 android:layout_weight="1"
-                android:background="@drawable/wheel_bg_1" />
+                android:background="@drawable/finish_text_bg" />
 
-            <com.ab.view.wheel.AbWheelView
+            <com.ctl.smart.microwave.views.AbWheelView
                 android:id="@+id/wheelViews"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/wheel_bg_1" />
+                android:background="@drawable/finish_text_bg" />
         </LinearLayout>
 
         <TextView

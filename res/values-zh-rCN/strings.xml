@@ -69,6 +69,8 @@
     </string-array>
 
     <!-- child -->
+    <string name="yes">是</string>
+    <string name="no">否</string>
     <string name="ok">确定</string>
     <string name="save">收藏</string>
     <string name="delete_fav">删除</string>

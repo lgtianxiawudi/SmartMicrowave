@@ -1,5 +1,6 @@
 package com.ctl.smart.microwave.utils;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 import android.content.Context;
@@ -58,13 +59,37 @@ public class BitmapUtil {
 		opt.inInputShareable = true;
 		// 获取资源图片
 		ApplicationInfo appInfo = context.getApplicationInfo();
+		
 		int resID = context.getResources().getIdentifier(name, "drawable", appInfo.packageName);
-		if (resID==0) {
-			return null;
+		
+		InputStream in = null;
+		
+		if (resID != 0) {
+			in = context.getResources().openRawResource(resID);
+		}else{
+			try {
+				
+				String fileName = "caidannew_new/"+name+"";
+				
+				if (name.startsWith("img_dish")) {
+					fileName+=".jpg";
+				}else{
+					fileName+=".png";
+				}
+				
+				in = context.getResources().getAssets().open(fileName);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		InputStream is = context.getResources().openRawResource(resID);
-		bitmap = BitmapFactory.decodeStream(is, null, opt);
-		cache.putBitmap(name + "", bitmap);
+		
+		if ( in != null) {
+			
+			bitmap = BitmapFactory.decodeStream(in, null, opt);
+			cache.putBitmap(name + "", bitmap);
+			
+		}
 		return bitmap;
 	}
 }

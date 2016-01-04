@@ -56,6 +56,8 @@
     </string-array>
 
     <!-- child -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string name="ok">OK</string>
     <string name="save">favorite</string>
     <string name="delete_fav">delete</string>

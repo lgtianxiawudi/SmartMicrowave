@@ -27,7 +27,6 @@ public class FirstLevelFermentActivity extends AbActivity implements OnClickList
 
 	private String item[] = null;
 
-	private int[] ImageId;
 
 	private String name;
 	private FancyCoverFlowSampleAdapter adapter = null;
@@ -47,7 +46,6 @@ public class FirstLevelFermentActivity extends AbActivity implements OnClickList
 		HeadUtil headUtil = new HeadUtil(this, true).setTitleName(name);
 
 		item = ExcelUtil.getKindsByKey(name);
-		ImageId = new int[] { R.drawable.image27, R.drawable.image28 };
 		this.fancyCoverFlow.setUnselectedAlpha(0.8f);
 		this.fancyCoverFlow.setUnselectedSaturation(0.0f);
 		this.fancyCoverFlow.setUnselectedScale(0.5f);

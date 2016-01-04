@@ -25,12 +25,14 @@ import com.ctl.smart.microwave.utils.TextViewUtils;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import at.technikum.mti.fancycoverflow.FancyCoverFlow;
 import at.technikum.mti.fancycoverflow.FancyCoverFlowAdapter;
@@ -143,9 +145,10 @@ public class FancyCoverFlowSampleAdapter extends FancyCoverFlowAdapter {
 		if (bitmap != null&&isShowImage) {
 			holder.logo.setVisibility(View.VISIBLE);
 			holder.logo.setImageBitmap(bitmap);
-			holder.logo.setScaleType(ScaleType.FIT_XY);
-			holder.logo.setLayoutParams(new LinearLayout.LayoutParams(
-					this.width, height / 2));
+			LayoutParams layoutParams=new LinearLayout.LayoutParams(
+					this.width, height / 2);
+			layoutParams.gravity=Gravity.TOP;
+			holder.logo.setLayoutParams(layoutParams);
 			holder.content.setLayoutParams(new LinearLayout.LayoutParams(
 					this.width, height / 2));
 		} else {

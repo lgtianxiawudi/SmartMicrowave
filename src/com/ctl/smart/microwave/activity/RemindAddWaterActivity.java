@@ -15,51 +15,43 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.widget.Button;
 
-public class RemindAddWaterActivity extends AbActivity implements OnClickListener{
+public class RemindAddWaterActivity extends AbActivity implements OnClickListener {
+
+	private String name = "";
+
+	private Bundle bundle;
 	
-private String name = "";
+	@AbIocView(id=R.id.sure)
+	private Button sure;
 
-private Bundle bundle;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
 
-private String imageid = "";
+		setAbContentView(R.layout.addwater);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-@AbIocView(id = R.id.cooking_logo)
-private RefreshProgress cooking_logo;
+		bundle = getIntent().getExtras();
 
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-// TODO Auto-generated method stub
-super.onCreate(savedInstanceState);
+		if (bundle != null) {
+			name = bundle.getString("title");
 
-setAbContentView(R.layout.addwater);
-getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		}
+		HeadUtil headUtil = new HeadUtil(this).setTitleName(name);
 
-bundle = getIntent().getExtras();
-
-if (bundle != null) {
-	name = bundle.getString("title");
-	imageid = bundle.getString("imageid");
+		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
+				.setback_mainListener();
+		
+		sure.setOnClickListener(this);
 
 }
-HeadUtil headUtil = new HeadUtil(this).setTitleName(name);
 
-BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-		.setOkListener(this).setback_mainListener();
-
-try {
-	System.out.println(imageid);
-	cooking_logo.setCirCleBitmap(BitmapUtil.readBitMap(this, DataInit.getDataByKey(imageid)));
-} catch (NotFoundException e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
-}
-
-@Override
-public void onClick(View v) {
-// TODO Auto-generated method stub
-StartActivityUtil.startActivityForResult(this, CookingActivity.class,
-		bundle);
-}
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		StartActivityUtil.startActivityForResult(this, CookingActivity.class, bundle);
+	}
 }

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg2"
     android:orientation="vertical" >
 
     <include
@@ -61,8 +61,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/add_water"
-            android:background="#FFFFFF"
-           android:textColor="#FF0000"
+            android:background="#000000"
+           android:textColor="#FFFFFF"
            android:gravity="center"
            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/add_water"
