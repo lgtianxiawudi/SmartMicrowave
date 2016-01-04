@@ -61,6 +61,8 @@ public class FavoriteActivity extends AbActivity {
 	private TextView right;
 	
 	SortAdapter adapter;
+	
+	private String name;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -78,10 +80,15 @@ public class FavoriteActivity extends AbActivity {
 						StartActivityUtil.clearActivity();
 					}
 				}).setOkListener();
+
 		Bundle bundle = getIntent().getExtras();
+
+		if (bundle != null) {
+			name = bundle.getString("title");
+		}
        
 		HeadUtil headUtil = new HeadUtil(this)
-				.setTitleName(getString(R.string.favorites));
+				.setTitleName(name);
 		lvContact = (ListView) this.findViewById(R.id.lvContact);
 		group=(RadioGroup)findViewById(R.id.choice_type);
 		nodata=(TextView)findViewById(R.id.nodata);

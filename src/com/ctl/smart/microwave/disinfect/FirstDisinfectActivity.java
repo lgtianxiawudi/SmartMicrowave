@@ -27,6 +27,9 @@ public class FirstDisinfectActivity extends AbActivity implements OnClickListene
 	private String item[]=null;
 	
 	private FancyCoverFlowSampleAdapter adapter = null;
+	
+	private String name;
+	
 	@Override
 	protected void onCreate(Bundle back_maindInstanceState) {
 		// TODO Auto-generated method stub
@@ -34,7 +37,14 @@ public class FirstDisinfectActivity extends AbActivity implements OnClickListene
 		setAbContentView(R.layout.level);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener();
-		HeadUtil headUtil=new HeadUtil(this,true).setTitleName(getString(R.string.sterilize));
+		
+		Bundle bundle = getIntent().getExtras();
+
+		if (bundle != null) {
+			name = bundle.getString("title");
+		}
+		
+		HeadUtil headUtil=new HeadUtil(this,true).setTitleName(name);
 		
 		item=getResources().getStringArray(R.array.disinfect_level1);
 		
@@ -94,7 +104,7 @@ public class FirstDisinfectActivity extends AbActivity implements OnClickListene
 	private void itemListener() {
 		int position=this.fancyCoverFlow.getSelectedItemPosition()%item.length;
 		Bundle bundle=new Bundle();
-		bundle.putString("title", getString(R.string.sterilize)+getString(R.string.point)+item[position]);
+		bundle.putString("title", name+getString(R.string.point)+item[position]);
 		bundle.putInt("postion", position);
 		StartActivityUtil.startActivityForResult(this, SeondDisinfectActivity.class, bundle);
 	}

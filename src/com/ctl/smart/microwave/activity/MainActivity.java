@@ -5,7 +5,9 @@ import java.util.Calendar;
 import com.ab.activity.AbActivity;
 import com.ab.view.ioc.AbIocView;
 import com.ctl.smart.microwave.R;
+import com.ctl.smart.microwave.adapter.FancyCoverFlowSampleAdapter;
 import com.ctl.smart.microwave.automenu.FirstLevelAutoMenuActivity;
+import com.ctl.smart.microwave.automenu.SecondLevelAutoMenuActivity;
 import com.ctl.smart.microwave.cavityclean.FirstCavitycleanActivity;
 import com.ctl.smart.microwave.defrost.FirstLevelDefrostActivity;
 import com.ctl.smart.microwave.deodorize.FirstDeodorizeActivity;
@@ -28,9 +30,14 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemSelectedListener;
+import at.technikum.mti.fancycoverflow.FancyCoverFlow;
 
 public class MainActivity extends AbActivity implements TimeChangeListener, OnClickListener {
 
@@ -40,41 +47,16 @@ public class MainActivity extends AbActivity implements TimeChangeListener, OnCl
 	@AbIocView(id = R.id.day)
 	private TextView day;
 
-	@AbIocView(id = R.id.automatic_menu, click = "onClick")
-	private Button automatic_menu;
-
-	@AbIocView(id = R.id.heat_up, click = "onClick")
-	private Button heat_up;
-
-	@AbIocView(id = R.id.thaw, click = "onClick")
-	private Button thaw;
-
-	@AbIocView(id = R.id.snacks, click = "onClick")
-	private Button snacks;
-
-	@AbIocView(id = R.id.fermentation, click = "onClick")
-	private Button fermentation;
-
-	@AbIocView(id = R.id.taste_removal, click = "onClick")
-	private Button taste_removal;
-
-	@AbIocView(id = R.id.sterilize, click = "onClick")
-	private Button sterilize;
-
-	@AbIocView(id = R.id.healthy_baby, click = "onClick")
-	private Button healthy_baby;
-
-	@AbIocView(id = R.id.cavity_clean, click = "onClick")
-	private Button cavity_clean;
-
-	@AbIocView(id = R.id.system, click = "onClick")
-	private Button system;
 	private boolean mIsServiceBinded = false;
 	private String item[] = null;
 	private Typeface dayTypeface = null;
 	private static final String ANDROID_CLOCK_FONT_FILE = "/system/fonts/AndroidClock.ttf";
-	@AbIocView(id = R.id.favorites, click = "onClick")
-	private Button favorites;
+	
+	@AbIocView(id = R.id.fancyCoverFlow)
+	private FancyCoverFlow fancyCoverFlow;
+
+
+	private FancyCoverFlowSampleAdapter adapter = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +74,32 @@ public class MainActivity extends AbActivity implements TimeChangeListener, OnCl
 		// getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_SHOW_FULLSCREEN);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+	
+		item = getResources().getStringArray(R.array.main);
+
+		this.fancyCoverFlow.setUnselectedAlpha(0.5f);
+		this.fancyCoverFlow.setUnselectedSaturation(0.0f);
+		this.fancyCoverFlow.setUnselectedScale(0.5f);
+		this.fancyCoverFlow.setMaxRotation(0);
+		this.fancyCoverFlow.setScaleDownGravity(0.5f);
+		this.fancyCoverFlow.setActionDistance(FancyCoverFlow.ACTION_DISTANCE_AUTO);
+		this.fancyCoverFlow.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
+
+			@Override
+			public void onGlobalLayout() {
+				// TODO Auto-generated method stub
+				int height = fancyCoverFlow.getMeasuredHeight();
+				int width = fancyCoverFlow.getMeasuredWidth();
+				adapter = new FancyCoverFlowSampleAdapter(item, MainActivity.this, width, height);
+				fancyCoverFlow.setAdapter(adapter);
+				fancyCoverFlow.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+			}
+		});
+	
 	}
+	
+	
+	private int LastPosition = -1;
 
 	@Override
 	protected void onResume() {
@@ -100,39 +107,98 @@ public class MainActivity extends AbActivity implements TimeChangeListener, OnCl
 		super.onResume();
 		initSize();
 		sendLedToService("1O2O3O4O5O6O7BS\n");
+		fancyCoverFlow.setOnItemClickListener(new OnItemClickListener() {
 
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+				// TODO Auto-generated method stub
+				if (LastPosition == arg2) {
+					itemListener();
+				}
+			}
+		});
+		fancyCoverFlow.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+				// TODO Auto-generated method stub
+				LastPosition = arg2;
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				LastPosition = -1;
+			}
+		});
+	}
+
+	private void itemListener() {
+		int position = fancyCoverFlow.getSelectedItemPosition() % item.length;
+		
+		String name = item[position];
+		
+		Bundle bundle =  new Bundle();
+		
+		bundle.putString("title", name);
+		
+		switch (position) {
+		case 0: {
+			StartActivityUtil.startActivityForResult(this, FirstLevelAutoMenuActivity.class,bundle);
+		}
+			break;
+		case 1: {
+			StartActivityUtil.startActivityForResult(this, FirstLevelReHeartActivity.class,bundle);
+		}
+			break;
+		case 2: {
+			StartActivityUtil.startActivityForResult(this, FirstLevelDefrostActivity.class,bundle);
+		}
+			break;
+		case 3: {
+			StartActivityUtil.startActivityForResult(this, FirstLevelSnackActivity.class,bundle);
+		}
+			break;
+		case 4: {
+			StartActivityUtil.startActivityForResult(this, FirstLevelFermentActivity.class,bundle);
+		}
+			break;
+		case 5: {
+			StartActivityUtil.startActivityForResult(this, FirstDeodorizeActivity.class,bundle);
+		}
+			break;
+		case 6: {
+			StartActivityUtil.startActivityForResult(this, FirstDisinfectActivity.class,bundle);
+		}
+			break;
+		case 7: {
+			StartActivityUtil.startActivityForResult(this, FirstLevelHealthyBabyActivity.class,bundle);
+		}
+			break;
+		case 8: {
+			StartActivityUtil.startActivityForResult(this, FirstCavitycleanActivity.class,bundle);
+		}
+			break;
+		case 9: {
+			StartActivityUtil.startActivityForResult(this, FavoriteActivity.class,bundle);
+		}
+			break;
+		case 10: {
+//			 StartActivityUtil.startActivityForResult(this,
+//			 SystemSettings.class,bundle);
+		}
+			break;
+		default:
+			break;
+		}
 	}
 
 	public void initSize() {
 
-		automatic_menu.setOnClickListener(this);
-		heat_up.setOnClickListener(this);
-		thaw.setOnClickListener(this);
-		snacks.setOnClickListener(this);
-		fermentation.setOnClickListener(this);
-		taste_removal.setOnClickListener(this);
-		sterilize.setOnClickListener(this);
-		healthy_baby.setOnClickListener(this);
-		cavity_clean.setOnClickListener(this);
-		favorites.setOnClickListener(this);
-		system.setOnClickListener(this);
 
 		TextViewUtils.setTitleSize(digitalClock);
 		TextViewUtils.setSixtyPercentSize(day);
 
-		/*
-		 * TextViewUtils.setCommonSize(automatic_menu);
-		 * TextViewUtils.setCommonSize(cavity_clean);
-		 * TextViewUtils.setCommonSize(favorites);
-		 * TextViewUtils.setCommonSize(fermentation);
-		 * TextViewUtils.setCommonSize(healthy_baby);
-		 * TextViewUtils.setCommonSize(heat_up);
-		 * TextViewUtils.setCommonSize(snacks);
-		 * TextViewUtils.setCommonSize(sterilize);
-		 * TextViewUtils.setCommonSize(system);
-		 * TextViewUtils.setCommonSize(taste_removal);
-		 * TextViewUtils.setCommonSize(thaw);
-		 */
 	}
 
 	@Override
@@ -147,55 +213,7 @@ public class MainActivity extends AbActivity implements TimeChangeListener, OnCl
 
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.automatic_menu: {
-			StartActivityUtil.startActivityForResult(this, FirstLevelAutoMenuActivity.class);
-		}
-			break;
-		case R.id.heat_up: {
-			StartActivityUtil.startActivityForResult(this, FirstLevelReHeartActivity.class);
-		}
-			break;
-		case R.id.thaw: {
-			StartActivityUtil.startActivityForResult(this, FirstLevelDefrostActivity.class);
-		}
-			break;
-		case R.id.snacks: {
-			StartActivityUtil.startActivityForResult(this, FirstLevelSnackActivity.class);
-		}
-			break;
-		case R.id.fermentation: {
-			StartActivityUtil.startActivityForResult(this, FirstLevelFermentActivity.class);
-		}
-			break;
-		case R.id.taste_removal: {
-			StartActivityUtil.startActivityForResult(this, FirstDeodorizeActivity.class);
-		}
-			break;
-		case R.id.sterilize: {
-			StartActivityUtil.startActivityForResult(this, FirstDisinfectActivity.class);
-		}
-			break;
-		case R.id.healthy_baby: {
-			StartActivityUtil.startActivityForResult(this, FirstLevelHealthyBabyActivity.class);
-		}
-			break;
-		case R.id.cavity_clean: {
-			StartActivityUtil.startActivityForResult(this, FirstCavitycleanActivity.class);
-		}
-			break;
-		case R.id.favorites: {
-			StartActivityUtil.startActivityForResult(this, FavoriteActivity.class);
-		}
-			break;
-		case R.id.system: {
-			// StartActivityUtil.startActivityForResult(this,
-			// SystemSettings.class);
-		}
-			break;
-		default:
-			break;
-		}
+
 	}
 
 	protected void onStart() {

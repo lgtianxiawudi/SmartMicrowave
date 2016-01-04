@@ -8,34 +8,38 @@
     <!-- main -->
     <string name="day">日</string>
     <string name="month">月</string>
-    <string name="automatic_menu">自动菜单</string>
-    <string name="heat_up">翻热</string>
-    <string name="thaw">解冻</string>
-    <string name="snacks">零食</string>
-    <string name="fermentation">发酵</string>
-    <string name="taste_removal">除味</string>
-    <string name="sterilize">杀菌</string>
-    <string name="healthy_baby">健康宝宝</string>
-    <string name="cavity_clean">蒸汽清洁</string>
-    <string name="favorites">我的收藏夹</string>
-    <string name="system">系统设置</string>
-    
+
+    <string-array name="main">
+        <item>自动菜单</item>
+        <item>翻热</item>
+        <item>解冻</item>
+        <item>零食</item>
+        <item>发酵</item>
+        <item>除味</item>
+        <item>杀菌</item>
+        <item>健康宝宝</item>
+        <item>蒸汽清洁</item>
+        <item>我的收藏夹</item>
+        <item>系统设置</item>
+    </string-array>
+
     <string name="advice_tem">建\n议\n温\n度\n</string>
     <string name="advice_gl">建\n议\n功\n率\n</string>
     <string name="point">•</string>
     <string name="add_water">请加水</string>
     <string name="remind_water">请确认水盒里的\n水是否充足？</string>
+
     <string-array name="disinfect_level1">
         <item>餐具杀菌</item>
         <item>奶瓶消毒</item>
     </string-array>
-    
+
     <!-- cavityclean menu -->
     <string-array name="cavityclean_level1">
         <item>蒸汽清洁</item>
         <item>腔体清洁</item>
     </string-array>
-    
+
     <string name="rehart_status">预热结束，请放入食材.....</string>
     <string name="cook_status">烹饪已结束...</string>
     <string name="cook_status_two">解冻已结束...</string>
@@ -49,14 +53,12 @@
     <string name="deodorize_title">除味</string>
     <string name="deodorize_time">5秒后倒计时开始</string>
     <string name="deodorize_warn">除味中......</string>
-
-	<string name="start_time">后开始启动......</string>
-	
-<string name="position_remind">层架位置</string>
-<string name="back_remind">你是否要停止烹饪并返回到上级菜单？</string>
+    <string name="start_time">后开始启动......</string>
+    <string name="position_remind">层架位置</string>
+    <string name="back_remind">你是否要停止烹饪并返回到上级菜单？</string>
 
     <string-array name="week">
-    	<item>星期日</item>
+        <item>星期日</item>
         <item>星期一</item>
         <item>星期二</item>
         <item>星期三</item>
@@ -120,7 +122,7 @@
         <item>烤</item>
         <item>蒸</item>
         <item>中汤</item>
-        <item >饭</item>
+        <item>饭</item>
     </string-array>
     <string-array name="auton_menu_level4">
         <item>100g</item>
@@ -183,6 +185,7 @@
         <item>220\n°C</item>
         <item>230\n°C</item>
     </string-array>
+
     <string name="rehear_ok">预热</string>
     <string name="rehear_no">不预热</string>
     <string name="reheart_time">预热时间</string>
@@ -212,7 +215,7 @@
         <item>1700g</item>
         <item>1800g</item>
     </string-array>
-    
+
     <!-- snacks menu -->
     <string-array name="snacks_level1">
         <item>蛋糕</item>
@@ -234,7 +237,7 @@
         <item>400g</item>
         <item>500g</item>
     </string-array>
-    
+
     <!-- ferment menu -->
     <string-array name="ferment_level1">
         <item>酸奶</item>
@@ -247,7 +250,7 @@
         <item>400g</item>
         <item>500g</item>
     </string-array>
-    
+
     <!-- healthybaby menu -->
     <string-array name="healthybaby_level1">
         <item>红萝卜泥</item>
@@ -261,72 +264,61 @@
         <item>400g</item>
         <item>500g</item>
     </string-array>
-    
+
     <!-- settings menu -->
     <string name="settings_lable">系统设置</string>
-	<string name="settings_date">时间和日期</string>
-	<string name="settings_display">显示和亮度</string>
-	<string name="settings_touchsound">按键声音</string>
-	<string name="settings_clock">时钟显示</string>
-	<string name="settings_interiorlight">内部照明</string>
-	<string name="settings_warmtime">保温时间</string>
-	
-	<string name="settings_childlock">自动童锁</string>
-	<string name="settings_help">提示辅助说明</string>
-	<string name="settings_displaylogo">画面上品牌LOGO</string>
-	<string name="settings_reset">恢复出厂设置</string>
-	
-	<string name="date_autoset">自动设置</string>
-	<string name="date_set">日期</string>
-	<string name="time_set">时间</string>
-	<string name="time_mode">24小时制</string>
-	<string name="time_am">上午</string>
-	<string name="time_pm">下午</string>
-	
-	<string name="disp_light">画面亮度</string>
-	<string name="disp_time">画面显示</string>
-	<string name="disp_font">字体大小</string>
-	
-	<string name="disp_warn">拖动下方的滑块</string>
-	<string name="disp_lower">小</string>
-	<string name="disp_plus">大</string>
-	
-	<string name="touchsound_title">按键声音</string>
-	
-	<string name="timeset_h">时</string>
-	<string name="timeset_m">分</string>
-	<string name="timeset_s">秒</string>
-	<string name="timeset_warn">温馨提示：此功能至少需要？分钟</string>
-	
-	<string name="disp_time_1">一直开着</string>
-	<string name="disp_time_2">5分钟后关闭</string>
-	
-	<string name="clock_mode1">模拟式</string>
-	<string name="clock_mode2">数字式</string>
-	
-	<string name="interLight_set1">烹调开始后</string>
-	<string name="interLight_set2">1分钟后关闭</string>
-	<string name="interLight_set3">2分钟后关闭</string>
-	<string name="interLight_set4">3分钟后关闭</string>
-	<string name="interLight_set5">一直关闭</string>
-	
-	<string name="warm_time1">5分钟</string>
-	<string name="warm_time2">10分钟</string>
-	<string name="warm_time3">15分钟</string>
-	
-	<string name="favorite_lab">名称</string>
-	<string name="favorite_mode">烹调方式</string>
-	<string name="favorite_date">日期</string>
-	<string name="favorite_empty">无收藏信息</string>
-	<string name="error_info">机器故障</string>
-	<string name="error_help">(请联系售后)</string>
-	<string name="error_scontent">----------E01-------------</string>
-	<string name="fm_title">请翻面！</string>
-	<string name="fm_jj">翻面后解冻效果会更好哦～</string>
-	<string name="type_jj">预热的情况下，如放入食物加热，则烹饪效果不是很好喔~</string>
-	<string name="clean_detail">水＋醋，比例为10:1（？）</string>
-      <string name="settings_reset_title">恢复出厂设置？</string>
-      <string name="settings_reset_confirm">此操作将删除所个人设置信息，并还原所有设置，数据无法恢复！</string>
-      <string name="settings_reset_process">恢复出厂设置中......</string>
+    <string name="settings_date">时间和日期</string>
+    <string name="settings_display">显示和亮度</string>
+    <string name="settings_touchsound">按键声音</string>
+    <string name="settings_clock">时钟显示</string>
+    <string name="settings_interiorlight">内部照明</string>
+    <string name="settings_warmtime">保温时间</string>
+    <string name="settings_childlock">自动童锁</string>
+    <string name="settings_help">提示辅助说明</string>
+    <string name="settings_displaylogo">画面上品牌LOGO</string>
+    <string name="settings_reset">恢复出厂设置</string>
+    <string name="date_autoset">自动设置</string>
+    <string name="date_set">日期</string>
+    <string name="time_set">时间</string>
+    <string name="time_mode">24小时制</string>
+    <string name="time_am">上午</string>
+    <string name="time_pm">下午</string>
+    <string name="disp_light">画面亮度</string>
+    <string name="disp_time">画面显示</string>
+    <string name="disp_font">字体大小</string>
+    <string name="disp_warn">拖动下方的滑块</string>
+    <string name="disp_lower">小</string>
+    <string name="disp_plus">大</string>
+    <string name="touchsound_title">按键声音</string>
+    <string name="timeset_h">时</string>
+    <string name="timeset_m">分</string>
+    <string name="timeset_s">秒</string>
+    <string name="timeset_warn">温馨提示：此功能至少需要？分钟</string>
+    <string name="disp_time_1">一直开着</string>
+    <string name="disp_time_2">5分钟后关闭</string>
+    <string name="clock_mode1">模拟式</string>
+    <string name="clock_mode2">数字式</string>
+    <string name="interLight_set1">烹调开始后</string>
+    <string name="interLight_set2">1分钟后关闭</string>
+    <string name="interLight_set3">2分钟后关闭</string>
+    <string name="interLight_set4">3分钟后关闭</string>
+    <string name="interLight_set5">一直关闭</string>
+    <string name="warm_time1">5分钟</string>
+    <string name="warm_time2">10分钟</string>
+    <string name="warm_time3">15分钟</string>
+    <string name="favorite_lab">名称</string>
+    <string name="favorite_mode">烹调方式</string>
+    <string name="favorite_date">日期</string>
+    <string name="favorite_empty">无收藏信息</string>
+    <string name="error_info">机器故障</string>
+    <string name="error_help">(请联系售后)</string>
+    <string name="error_scontent">----------E01-------------</string>
+    <string name="fm_title">请翻面！</string>
+    <string name="fm_jj">翻面后解冻效果会更好哦～</string>
+    <string name="type_jj">预热的情况下，如放入食物加热，则烹饪效果不是很好喔~</string>
+    <string name="clean_detail">水＋醋，比例为10:1（？）</string>
+    <string name="settings_reset_title">恢复出厂设置？</string>
+    <string name="settings_reset_confirm">此操作将删除所个人设置信息，并还原所有设置，数据无法恢复！</string>
+    <string name="settings_reset_process">恢复出厂设置中......</string>
 
 </resources>

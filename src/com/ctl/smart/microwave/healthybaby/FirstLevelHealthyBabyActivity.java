@@ -37,7 +37,11 @@ public class FirstLevelHealthyBabyActivity extends AbActivity implements
 		// TODO Auto-generated method stub
 		super.onCreate(back_maindInstanceState);
 		setAbContentView(R.layout.level);
-		name = getString(R.string.healthy_baby);
+		Bundle bundle = getIntent().getExtras();
+
+		if (bundle != null) {
+			name = bundle.getString("title");
+		}
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
 				;

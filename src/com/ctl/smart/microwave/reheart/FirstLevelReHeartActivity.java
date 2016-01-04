@@ -27,6 +27,9 @@ public class FirstLevelReHeartActivity extends AbActivity implements OnClickList
 	private String item[]=null;
 	
 	private FancyCoverFlowSampleAdapter adapter = null;
+	
+	private String name;
+	
 	@Override
 	protected void onCreate(Bundle back_maindInstanceState) {
 		// TODO Auto-generated method stub
@@ -34,7 +37,14 @@ public class FirstLevelReHeartActivity extends AbActivity implements OnClickList
 		setAbContentView(R.layout.level);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener();
-		HeadUtil headUtil=new HeadUtil(this,true).setTitleName(getString(R.string.heat_up));
+		
+		Bundle bundle = getIntent().getExtras();
+
+		if (bundle != null) {
+			name = bundle.getString("title");
+		}
+		
+		HeadUtil headUtil=new HeadUtil(this,true).setTitleName(name);
 		
 		item=getResources().getStringArray(R.array.reheart_level1);
 		
@@ -106,7 +116,7 @@ public class FirstLevelReHeartActivity extends AbActivity implements OnClickList
 		case 1:
 		case 2:
 		{
-			bundle.putString("title", getString(R.string.heat_up)+getString(R.string.point)+item[position].split("•")[0]);
+			bundle.putString("title", name+getString(R.string.point)+item[position].split("•")[0]);
 			StartActivityUtil.startActivityForResult(this, SecondLevelReHeartActivity.class, bundle);
 		}
 			break;
@@ -116,7 +126,7 @@ public class FirstLevelReHeartActivity extends AbActivity implements OnClickList
 		{
 			bundle.putString("time", "1:30");
 			bundle.putString("autoPauseTime", "30");
-			bundle.putString("title", getString(R.string.heat_up)+getString(R.string.point)+item[position]);
+			bundle.putString("title", name+getString(R.string.point)+item[position]);
 			StartActivityUtil.startActivityForResult(this, CookingActivity.class, bundle);
 			
 		}

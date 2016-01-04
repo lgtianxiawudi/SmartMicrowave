@@ -8,17 +8,19 @@
     <!-- main -->
     <string name="day">Day</string>
     <string name="month">Month</string>
-    <string name="automatic_menu">Auto Menu</string>
-    <string name="heat_up">Reheat</string>
-    <string name="thaw">Defrost</string>
-    <string name="snacks">Snack</string>
-    <string name="fermentation">Ferment</string>
-    <string name="taste_removal">Deodorize</string>
-    <string name="sterilize">Disinfect</string>
-    <string name="healthy_baby">Healthybaby</string>
-    <string name="cavity_clean">Steam cleaning</string>
-    <string name="favorites">Myfavorite</string>
-    <string name="system">SystemSetting</string>
+    <string-array name="main">
+    <item>Auto Menu</item>
+    <item >Reheat</item>
+    <item >Defrost</item>
+    <item >Snack</item>
+    <item >Ferment</item>
+    <item >Deodorize</item>
+    <item >Disinfect</item>
+    <item >Healthybaby</item>
+    <item >Steam cleaning</item>
+    <item >Myfavorite</item>
+    <item >SystemSetting</item>
+    </string-array>
     
     <string name="cook_status">Cooking has ended...</string>
     <string name="cook_status_two">Defrost has ended...</string>

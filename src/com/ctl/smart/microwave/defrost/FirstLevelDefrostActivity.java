@@ -26,6 +26,8 @@ public class FirstLevelDefrostActivity extends AbActivity implements
 
 	private String item[] = null;
 	private FancyCoverFlowSampleAdapter adapter = null;
+	
+	private String name;
 
 	@Override
 	protected void onCreate(Bundle back_maindInstanceState) {
@@ -35,8 +37,15 @@ public class FirstLevelDefrostActivity extends AbActivity implements
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
 				;
+		
+		Bundle bundle = getIntent().getExtras();
+
+		if (bundle != null) {
+			name = bundle.getString("title");
+		}
+		
 		HeadUtil headUtil = new HeadUtil(this,true)
-				.setTitleName(getString(R.string.thaw));
+				.setTitleName(name);
 
 		item = getResources().getStringArray(R.array.defrost_level1);
 
@@ -105,7 +114,7 @@ public class FirstLevelDefrostActivity extends AbActivity implements
 	private void itemListener() {
 		int position = this.fancyCoverFlow.getSelectedItemPosition()%item.length;
 		Bundle bundle = new Bundle();
-		bundle.putString("title",getString(R.string.thaw)+getString(R.string.point)+ item[position].split("•")[0]);
+		bundle.putString("title",name+getString(R.string.point)+ item[position].split("•")[0]);
 		bundle.putInt("postion", position);
 		bundle.putString("imageid", ""+item[position]);
 		bundle.putString("time", "1:30");

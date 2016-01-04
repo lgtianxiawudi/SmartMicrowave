@@ -20,13 +20,11 @@ import com.ctl.smart.microwave.utils.HeadUtil;
 import com.ctl.smart.microwave.utils.StartActivityUtil;
 import android.view.WindowManager;
 
-public class FirstLevelSnackActivity extends AbActivity implements
-		OnClickListener {
+public class FirstLevelSnackActivity extends AbActivity implements OnClickListener {
 	@AbIocView(id = R.id.fancyCoverFlow)
 	private FancyCoverFlow fancyCoverFlow;
 
 	private String item[] = null;
-
 
 	private String name;
 	private FancyCoverFlowSampleAdapter adapter = null;
@@ -37,7 +35,11 @@ public class FirstLevelSnackActivity extends AbActivity implements
 		super.onCreate(back_maindInstanceState);
 		setAbContentView(R.layout.level);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		name = getString(R.string.snacks);
+		Bundle bundle = getIntent().getExtras();
+
+		if (bundle != null) {
+			name = bundle.getString("title");
+		}
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener();
 		HeadUtil headUtil = new HeadUtil(this, true).setTitleName(name);
 
@@ -47,26 +49,19 @@ public class FirstLevelSnackActivity extends AbActivity implements
 		this.fancyCoverFlow.setUnselectedScale(0.5f);
 		this.fancyCoverFlow.setMaxRotation(0);
 		this.fancyCoverFlow.setScaleDownGravity(0.5f);
-		this.fancyCoverFlow
-				.setActionDistance(FancyCoverFlow.ACTION_DISTANCE_AUTO);
-		this.fancyCoverFlow.getViewTreeObserver().addOnGlobalLayoutListener(
-				new OnGlobalLayoutListener() {
+		this.fancyCoverFlow.setActionDistance(FancyCoverFlow.ACTION_DISTANCE_AUTO);
+		this.fancyCoverFlow.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
 
-					@Override
-					public void onGlobalLayout() {
-						// TODO Auto-generated method stub
-						int height = fancyCoverFlow.getMeasuredHeight();
-						int width = fancyCoverFlow.getMeasuredWidth();
-						adapter=new FancyCoverFlowSampleAdapter(
-										item,
-										FirstLevelSnackActivity.this, width,
-		height);
-						fancyCoverFlow
-								.setAdapter(adapter);
-						fancyCoverFlow.getViewTreeObserver()
-								.removeGlobalOnLayoutListener(this);
-					}
-				});
+			@Override
+			public void onGlobalLayout() {
+				// TODO Auto-generated method stub
+				int height = fancyCoverFlow.getMeasuredHeight();
+				int width = fancyCoverFlow.getMeasuredWidth();
+				adapter = new FancyCoverFlowSampleAdapter(item, FirstLevelSnackActivity.this, width, height);
+				fancyCoverFlow.setAdapter(adapter);
+				fancyCoverFlow.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+			}
+		});
 	}
 
 	private int LastPosition = -1;
@@ -78,8 +73,7 @@ public class FirstLevelSnackActivity extends AbActivity implements
 		fancyCoverFlow.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				// TODO Auto-generated method stub
 				if (LastPosition == arg2) {
 					itemListener();
@@ -89,8 +83,7 @@ public class FirstLevelSnackActivity extends AbActivity implements
 		fancyCoverFlow.setOnItemSelectedListener(new OnItemSelectedListener() {
 
 			@Override
-			public void onItemSelected(AdapterView<?> arg0, View arg1,
-					int arg2, long arg3) {
+			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 				// TODO Auto-generated method stub
 				LastPosition = arg2;
 			}
@@ -104,14 +97,13 @@ public class FirstLevelSnackActivity extends AbActivity implements
 	}
 
 	private void itemListener() {
-		int position = this.fancyCoverFlow.getSelectedItemPosition()%item.length;
+		int position = this.fancyCoverFlow.getSelectedItemPosition() % item.length;
 		Bundle bundle = new Bundle();
-		bundle.putString("title", name + getString(R.string.point)
-				+ item[position]);
+		bundle.putString("title", name + getString(R.string.point) + item[position]);
 		bundle.putInt("postion", position);
 		bundle.putString("imageid", item[position]);
-		StartActivityUtil.startActivityOther(this, null, null, name + getString(R.string.point)
-				+ item[position], name, position, item[position], 1);
+		StartActivityUtil.startActivityOther(this, null, null, name + getString(R.string.point) + item[position], name,
+				position, item[position], 1);
 	}
 
 	@Override

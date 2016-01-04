@@ -55,11 +55,14 @@ public class FirstCavitycleanActivity extends AbActivity implements OnClickListe
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.time_setting);
-		
+
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		name=getString(R.string.cavity_clean);
-		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-				.setback_mainListener();
+		Bundle bundle = getIntent().getExtras();
+
+		if (bundle != null) {
+			name = bundle.getString("title");
+		}
+		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener().setback_mainListener();
 		HeadUtil headUtil = new HeadUtil(this).setTitleName(name);
 		WheelUtils.initWheelDatePicker(this, hour, mint, send);
 		remind.setVisibility(View.INVISIBLE);
@@ -84,12 +87,11 @@ public class FirstCavitycleanActivity extends AbActivity implements OnClickListe
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.ok: {
-			int time=mint.getCurrentItem()*60+send.getCurrentItem();
-			Bundle bundle=new Bundle();
+			int time = mint.getCurrentItem() * 60 + send.getCurrentItem();
+			Bundle bundle = new Bundle();
 			bundle.putString("title", name);
-			bundle.putInt("time", time*1000);
-			StartActivityUtil.startActivityForResult(this,
-					SeondCavitycleanActivity.class, bundle);
+			bundle.putInt("time", time * 1000);
+			StartActivityUtil.startActivityForResult(this, SeondCavitycleanActivity.class, bundle);
 		}
 			break;
 
