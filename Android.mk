@@ -19,10 +19,12 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_STATIC_JAVA_LIBRARIES := libandbase libcover android-support-v4
+LOCAL_STATIC_JAVA_LIBRARIES := libandbase libcover libjxl android-support-v4
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 
+LOCAL_JNI_SHARED_LIBRARIES := libserial_port
+LOCAL_REQUIRED_MODULES := libserial_port
 #LOCAL_SDK_VERSION := current
 
 LOCAL_PACKAGE_NAME := LauncherActivity
@@ -34,10 +36,13 @@ include $(CLEAR_VARS)
 
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := libandbase:andbase.jar \
 	libcover:coverflow.jar \
+	libjxl:jxl.jar \
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 include $(BUILD_MULTI_PREBUILT)
 
 # Use the folloing include to make our test apk.
+include $(LOCAL_PATH)/jni/Android.mk
+include $(call all-makefiles-under, jni)
 include $(call all-makefiles-under,$(LOCAL_PATH))

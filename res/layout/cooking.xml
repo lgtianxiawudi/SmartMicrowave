@@ -41,7 +41,6 @@
                 android:id="@+id/cooking_logo"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:background="@drawable/cirle_bg"
                 android:scaleType="center" />
 
             <TextView
@@ -69,6 +68,11 @@
            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/add_water"
             android:alpha="0.7"></TextView>
+        <include 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/fanmian"
+            android:visibility="gone"/>
     </FrameLayout>
 
     <include

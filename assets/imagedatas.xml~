@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageData>
+	<Image>
+		<ImageName>img_dish_1</ImageName>
+		<FoodNameEn>Grain of rice</FoodNameEn>
+		<FoodName>五谷杂粮饭</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_2</ImageName>
+		<FoodNameEn>Steamed corn</FoodNameEn>
+		<FoodName>蒸玉米</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_7</ImageName>
+		<FoodNameEn>Egg soup</FoodNameEn>
+		<FoodName>虾米蒸蛋</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_4</ImageName>
+		<FoodNameEn>Roast chicken</FoodNameEn>
+		<FoodName>烤全鸡</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_5</ImageName>
+		<FoodNameEn>Vegetables</FoodNameEn>
+		<FoodName>蔬菜</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_6</ImageName>
+		<FoodNameEn>Cake</FoodNameEn>
+		<FoodName>蛋糕</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_7</ImageName>
+		<FoodNameEn>Egg soup</FoodNameEn>
+		<FoodName>鸡蛋羹</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_8</ImageName>
+		<FoodNameEn>Hand steamed stuffed bun</FoodNameEn>
+		<FoodName>手工包子</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_9</ImageName>
+		<FoodNameEn>333</FoodNameEn>
+		<FoodName>番薯糖水</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_10</ImageName>
+		<FoodNameEn>Pumpkin Island</FoodNameEn>
+		<FoodName>南瓜洲</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_11</ImageName>
+		<FoodNameEn>Vegetables / fruit</FoodNameEn>
+		<FoodName>蔬菜/水果</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_12</ImageName>
+		<FoodNameEn>Roast chicken</FoodNameEn>
+		<FoodName>烤鸡腿</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_13</ImageName>
+		<FoodNameEn>Egg</FoodNameEn>
+		<FoodName>鸡蛋</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_14</ImageName>
+		<FoodNameEn>Steamed chicken with black bean sauce</FoodNameEn>
+		<FoodName>豉汁蒸凤爪</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_15</ImageName>
+		<FoodNameEn>Steamed Fish Head with Diced Hot Red Peppers</FoodNameEn>
+		<FoodName>剁椒鱼头</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_16</ImageName>
+		<FoodNameEn>Lily lotus Lily Lily</FoodNameEn>
+		<FoodName>鲜奶炖莲子百合</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_17</ImageName>
+		<FoodNameEn>Steamed pork ribs</FoodNameEn>
+		<FoodName>蒸排骨</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_18</ImageName>
+		<FoodNameEn>Steamed egg with minced shrimp</FoodNameEn>
+		<FoodName>肉末虾仁蒸蛋</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_19</ImageName>
+		<FoodNameEn>Spring Rolls</FoodNameEn>
+		<FoodName>春卷</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_20</ImageName>
+		<FoodNameEn>Cake</FoodNameEn>
+		<FoodName>蛋糕</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_21</ImageName>
+		<FoodNameEn>Hand steamed stuffed bun</FoodNameEn>
+		<FoodName>手工包子</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_23</ImageName>
+		<FoodNameEn>Mung Bean Congee</FoodNameEn>
+		<FoodName>绿豆粥</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_24</ImageName>
+		<FoodNameEn>Pizza cake</FoodNameEn>
+		<FoodName>披萨饼</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_25</ImageName>
+		<FoodNameEn>Dilute Rice Congee</FoodNameEn>
+		<FoodName>稀白粥</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_26</ImageName>
+		<FoodNameEn>Rice</FoodNameEn>
+		<FoodName>白米饭</FoodName>
+	</Image>
+	
+	<Image>
+		<ImageName>img_dish_27</ImageName>
+		<FoodNameEn>Roast pork ribs</FoodNameEn>
+		<FoodName>烤排骨</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_28</ImageName>
+		<FoodNameEn>Hamburger beef pie</FoodNameEn>
+		<FoodName>汉堡牛肉饼</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_29</ImageName>
+		<FoodNameEn>Steamed pork with rice flour</FoodNameEn>
+		<FoodName>粉蒸肉</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_30</ImageName>
+		<FoodNameEn>Bread</FoodNameEn>
+		<FoodName>面包</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_31</ImageName>
+		<FoodNameEn>Rice</FoodNameEn>
+		<FoodName>白米饭</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_32</ImageName>
+		<FoodNameEn>Vegetables / fruit</FoodNameEn>
+		<FoodName>蔬菜/水果</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_33</ImageName>
+		<FoodNameEn>Instant noodles</FoodNameEn>
+		<FoodName>方便面</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_34</ImageName>
+		<FoodNameEn>Steamed spareribs with rice flour lotus</FoodNameEn>
+		<FoodName>粉蒸排骨藕</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_35</ImageName>
+		<FoodNameEn>Pei Genjuan</FoodNameEn>
+		<FoodName>培根卷</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_54</ImageName>
+		<FoodNameEn>Double skin milk</FoodNameEn>
+		<FoodName>双皮奶</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_36</ImageName>
+		<FoodNameEn>Egg pudding</FoodNameEn>
+		<FoodName>鸡蛋布丁</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_38</ImageName>
+		<FoodNameEn>Soup</FoodNameEn>
+		<FoodName>老火汤</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_39</ImageName>
+		<FoodNameEn>Mushroom and chicken</FoodNameEn>
+		<FoodName>香菇滑鸡</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_40</ImageName>
+		<FoodNameEn>Fresh milk stew papaya</FoodNameEn>
+		<FoodName>鲜奶炖木瓜</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_41</ImageName>
+		<FoodNameEn>44</FoodNameEn>
+		<FoodName>44</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_42</ImageName>
+		<FoodNameEn>Flour</FoodNameEn>
+		<FoodName>面粉</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_43</ImageName>
+		<FoodNameEn>Fast soup</FoodNameEn>
+		<FoodName>快汤</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_44</ImageName>
+		<FoodNameEn>Cook Boiled dumplings</FoodNameEn>
+		<FoodName>煮水饺</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_45</ImageName>
+		<FoodNameEn>Steamed fish</FoodNameEn>
+		<FoodName>清蒸鱼</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_46</ImageName>
+		<FoodNameEn>Cookies</FoodNameEn>
+		<FoodName>曲奇饼</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_47</ImageName>
+		<FoodNameEn>Roast potatoes</FoodNameEn>
+		<FoodName>烤番薯</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_48</ImageName>
+		<FoodNameEn>55</FoodNameEn>
+		<FoodName>55</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_28</ImageName>
+		<FoodNameEn>Fresh prawns mushrooms steamed beef cake</FoodNameEn>
+		<FoodName>鲜虾冬菇蒸牛肉饼</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_50</ImageName>
+		<FoodNameEn>Hamburger beef pie</FoodNameEn>
+		<FoodName>汉堡牛肉饼</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_51</ImageName>
+		<FoodNameEn>Fast soup</FoodNameEn>
+		<FoodName>快汤</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_11</ImageName>
+		<FoodNameEn>Green leafy vegetables</FoodNameEn>
+		<FoodName>绿叶蔬菜</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_53</ImageName>
+		<FoodNameEn>66</FoodNameEn>
+		<FoodName>66</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_54</ImageName>
+		<FoodNameEn>Double skin milk</FoodNameEn>
+		<FoodName>双皮奶</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_55</ImageName>
+		<FoodNameEn>77</FoodNameEn>
+		<FoodName>77</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_56</ImageName>
+		<FoodNameEn>Egg biscuit</FoodNameEn>
+		<FoodName>鸡蛋饼干</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_57</ImageName>
+		<FoodNameEn>Butter cookies</FoodNameEn>
+		<FoodName>黄油饼干</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_58</ImageName>
+		<FoodNameEn>Popcorn</FoodNameEn>
+		<FoodName>爆米花</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_60</ImageName>
+		<FoodNameEn>Steam•Suitable for cooking food</FoodNameEn>
+		<FoodName>蒸汽•适用于蒸煮食品</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image17</ImageName>
+		<FoodNameEn>HotAir Convection•Apply to fried food</FoodNameEn>
+		<FoodName>变频微波•适用于快速加热</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_61</ImageName>
+		<FoodNameEn>Frequency Microwave•Suitable for rapid heating</FoodNameEn>
+		<FoodName>热风对流•适用于油炸食品</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image19</ImageName>
+		<FoodNameEn>Milk</FoodNameEn>
+		<FoodName>牛奶•250ml</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image20</ImageName>
+		<FoodNameEn>Coffee</FoodNameEn>
+		<FoodName>咖啡•250ml</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_22</ImageName>
+		<FoodNameEn>Drinks</FoodNameEn>
+		<FoodName>饮料•250ml</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image21</ImageName>
+		<FoodNameEn>Microwave•Rapid thawing</FoodNameEn>
+		<FoodName>微波•快速解冻</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image21</ImageName>
+		<FoodNameEn>Microwave+Steam•Maintain moisture</FoodNameEn>
+		<FoodName>微波+蒸汽•维持水分</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image29</ImageName>
+		<FoodNameEn>Carrot mud</FoodNameEn>
+		<FoodName>红萝卜泥</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image30</ImageName>
+		<FoodNameEn>Baby water egg</FoodNameEn>
+		<FoodName>宝宝水蛋</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image31</ImageName>
+		<FoodNameEn>Baby puree</FoodNameEn>
+		<FoodName>宝宝果泥</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_43</ImageName>
+		<FoodNameEn>Sweet potato syrup</FoodNameEn>
+		<FoodName>番薯糖水</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_7</ImageName>
+		<FoodNameEn>Small shrimp steamed egg</FoodNameEn>
+		<FoodName>虾米蒸蛋</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_10</ImageName>
+		<FoodNameEn>Millet Congee</FoodNameEn>
+		<FoodName>小米粥</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_31</ImageName>
+		<FoodNameEn>Cereal crop</FoodNameEn>
+		<FoodName>谷类</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image3</ImageName>
+		<FoodNameEn>Meat</FoodNameEn>
+		<FoodName>肉</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image9</ImageName>
+		<FoodNameEn>Fish / Seafood</FoodNameEn>
+		<FoodName>鱼/海鲜</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_59</ImageName>
+		<FoodNameEn>Dried sweet potato</FoodNameEn>
+		<FoodName>地瓜干</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_53</ImageName>
+		<FoodNameEn>Dried beef</FoodNameEn>
+		<FoodName>牛肉干</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image24</ImageName>
+		<FoodNameEn>Biscuits</FoodNameEn>
+		<FoodName>饼干</FoodName>
+	</Image>
+	<Image>
+		<ImageName>img_dish_57</ImageName>
+		<FoodNameEn>Cream cheese biscuit</FoodNameEn>
+		<FoodName>奶油奶酪饼干</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image28</ImageName>
+		<FoodNameEn>The dough</FoodNameEn>
+		<FoodName>面团</FoodName>
+	</Image>
+	<Image>
+		<ImageName>image27</ImageName>
+		<FoodNameEn>Yogurt</FoodNameEn>
+		<FoodName>酸奶</FoodName>
+	</Image>
+        <Image>
+		<ImageName>img_quick_micro</ImageName>
+		<FoodNameEn>quickmicro</FoodNameEn>
+		<FoodName>quickmicro</FoodName>
+	</Image>
+</ImageData>

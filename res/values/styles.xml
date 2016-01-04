@@ -39,4 +39,7 @@
         <item name="android:minHeight">40dip</item>
         <item name="android:maxHeight">40dip</item>
     </style>
+    <style name="myStyle" parent="android:attr/progressBarStyleHorizontal">
+        <item name="android:indeterminateDrawable">@drawable/progress_indeterminate_horizontal1</item>
+    </style>
 </resources>

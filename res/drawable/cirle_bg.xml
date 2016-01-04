@@ -22,5 +22,11 @@
     <item
         android:drawable="@drawable/progress_bar_bg07"
         android:duration="120"/>
+    <item
+        android:drawable="@drawable/progress_bar_bg08"
+        android:duration="120"/>
+    <item
+        android:drawable="@drawable/progress_bar_bg09"
+        android:duration="120"/>
 
 </animation-list>

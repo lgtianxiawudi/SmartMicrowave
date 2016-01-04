@@ -1,353 +1,415 @@
+/*
+ * Copyright 2013 David Schreiber
+ *           2013 John Paul Nalog
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+
 package at.technikum.mti.fancycoverflow;
 
-import com.ctl.smart.microwave.R;
-
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Camera;
 import android.graphics.Matrix;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewDebug.CapturedViewProperty;
+import android.view.ViewGroup;
 import android.view.animation.Transformation;
 import android.widget.Gallery;
 import android.widget.SpinnerAdapter;
 
+import com.ctl.smart.microwave.R;
+
 public class FancyCoverFlow extends Gallery {
 
-	public static final int ACTION_DISTANCE_AUTO = Integer.MAX_VALUE;
+    // =============================================================================
+    // Constants
+    // =============================================================================
 
-	/**
-	 * 图片向上突出，可以通过代码控制，也可以在xml上控制
-	 */
-	public static final float SCALEDOWN_GRAVITY_TOP = 0.0f;
-	/**
-	 * 图片中间突出
-	 */
-	public static final float SCALEDOWN_GRAVITY_CENTER = 0.5f;
-	/**
-	 * 图片向下突出
-	 */
-	public static final float SCALEDOWN_GRAVITY_BOTTOM = 1.0f;
+    public static final int ACTION_DISTANCE_AUTO = Integer.MAX_VALUE;
 
-	private float reflectionRatio = 0.3f;
+    public static final float SCALEDOWN_GRAVITY_TOP = 0.0f;
 
-	private int reflectionGap = 4;
+    public static final float SCALEDOWN_GRAVITY_CENTER = 0.5f;
 
-	private boolean reflectionEnabled = false;
+    public static final float SCALEDOWN_GRAVITY_BOTTOM = 1.0f;
 
-	private float unselectedAlpha;
+    // =============================================================================
+    // Private members
+    // =============================================================================
 
-	private Camera transformationCamera;
+    private float reflectionRatio = 0.4f;
 
-	private int maxRotation = 0;
+    private int reflectionGap = 20;
 
-	private float unselectedScale;
+    private boolean reflectionEnabled = false;
 
-	private float scaleDownGravity = SCALEDOWN_GRAVITY_CENTER;
+    /**
+     * TODO: Doc
+     */
+    private float unselectedAlpha;
 
-	private int actionDistance;
+    /**
+     * Camera used for view transformation.
+     */
+    private Camera transformationCamera;
 
-	private float unselectedSaturation;
+    /**
+     * TODO: Doc
+     */
+    private int maxRotation = 75;
 
-	public FancyCoverFlow(Context context) {
-		super(context);
-		this.initialize();
-	}
+    /**
+     * Factor (0-1) that defines how much the unselected children should be scaled down. 1 means no scaledown.
+     */
+    private float unselectedScale;
 
-	public FancyCoverFlow(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		this.initialize();
-		this.applyXmlAttributes(attrs);
-	}
+    /**
+     * TODO: Doc
+     */
+    private float scaleDownGravity = SCALEDOWN_GRAVITY_CENTER;
 
-	@SuppressLint("NewApi")
-	public FancyCoverFlow(Context context, AttributeSet attrs, int defStyle) {
-		super(context, attrs, defStyle);
-		if (Build.VERSION.SDK_INT >= 11) {
-			this.setLayerType(LAYER_TYPE_SOFTWARE, null);
+    /**
+     * Distance in pixels between the transformation effects (alpha, rotation, zoom) are applied.
+     */
+    private int actionDistance;
+
+    /**
+     * Saturation factor (0-1) of items that reach the outer effects distance.
+     */
+    private float unselectedSaturation;
+
+    // =============================================================================
+    // Constructors
+    // =============================================================================
+
+    public FancyCoverFlow(Context context) {
+        super(context);
+        this.initialize();
+    }
+
+    public FancyCoverFlow(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        this.initialize();
+        this.applyXmlAttributes(attrs);
+    }
+
+    public FancyCoverFlow(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        this.initialize();
+        this.applyXmlAttributes(attrs);
+    }
+
+    private void initialize() {
+        this.transformationCamera = new Camera();
+        this.setSpacing(0);
+    }
+
+    private void applyXmlAttributes(AttributeSet attrs) {
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.FancyCoverFlow);
+
+        this.actionDistance = a.getInteger(R.styleable.FancyCoverFlow_actionDistance, ACTION_DISTANCE_AUTO);
+        this.scaleDownGravity = a.getFloat(R.styleable.FancyCoverFlow_scaleDownGravity, 1.0f);
+        this.maxRotation = a.getInteger(R.styleable.FancyCoverFlow_maxRotation, 45);
+        this.unselectedAlpha = a.getFloat(R.styleable.FancyCoverFlow_unselectedAlpha, 0.3f);
+        this.unselectedSaturation = a.getFloat(R.styleable.FancyCoverFlow_unselectedSaturation, 0.0f);
+        this.unselectedScale = a.getFloat(R.styleable.FancyCoverFlow_unselectedScale, 0.75f);
+    }
+
+    // =============================================================================
+    // Getter / Setter
+    // =============================================================================
+
+    public float getReflectionRatio() {
+        return reflectionRatio;
+    }
+
+    public void setReflectionRatio(float reflectionRatio) {
+        if (reflectionRatio <= 0 || reflectionRatio > 0.5f) {
+            throw new IllegalArgumentException("reflectionRatio may only be in the interval (0, 0.5]");
+        }
+
+        this.reflectionRatio = reflectionRatio;
+
+        if (this.getAdapter() != null) {
+            ((FancyCoverFlowAdapter) this.getAdapter()).notifyDataSetChanged();
+        }
+    }
+
+    public int getReflectionGap() {
+        return reflectionGap;
+    }
+
+    public void setReflectionGap(int reflectionGap) {
+        this.reflectionGap = reflectionGap;
+
+        if (this.getAdapter() != null) {
+            ((FancyCoverFlowAdapter) this.getAdapter()).notifyDataSetChanged();
+        }
+    }
+
+    public boolean isReflectionEnabled() {
+        return reflectionEnabled;
+    }
+
+    public void setReflectionEnabled(boolean reflectionEnabled) {
+        this.reflectionEnabled = reflectionEnabled;
+
+        if (this.getAdapter() != null) {
+            ((FancyCoverFlowAdapter) this.getAdapter()).notifyDataSetChanged();
+        }
+    }
+
+    /**
+     * Use this to provide a {@link FancyCoverFlowAdapter} to the coverflow. This
+     * method will throw an {@link ClassCastException} if the passed adapter does not
+     * subclass {@link FancyCoverFlowAdapter}.
+     *
+     * @param adapter
+     */
+    @Override
+    public void setAdapter(SpinnerAdapter adapter) {
+        if (!(adapter instanceof FancyCoverFlowAdapter)) {
+            throw new ClassCastException(FancyCoverFlow.class.getSimpleName() + " only works in conjunction with a " + FancyCoverFlowAdapter.class.getSimpleName());
+        }
+
+        
+        super.setAdapter(adapter);
+        
+        if (adapter.getCount()>4) {
+			setSelection(Integer.MAX_VALUE/2);
 		}
-		this.initialize();
-		this.applyXmlAttributes(attrs);
-	}
+    }
 
-	private void initialize() {
-		this.transformationCamera = new Camera();
-		this.setSpacing(0);
-	}
+    /**
+     * Returns the maximum rotation that is applied to items left and right of the center of the coverflow.
+     *
+     * @return
+     */
+    public int getMaxRotation() {
+        return maxRotation;
+    }
 
-	private void applyXmlAttributes(AttributeSet attrs) {
-		TypedArray a = getContext().obtainStyledAttributes(attrs,
-				R.styleable.FancyCoverFlow);
+    /**
+     * Sets the maximum rotation that is applied to items left and right of the center of the coverflow.
+     *
+     * @param maxRotation
+     */
+    public void setMaxRotation(int maxRotation) {
+        this.maxRotation = maxRotation;
+    }
 
-		this.actionDistance = a
-				.getInteger(R.styleable.FancyCoverFlow_actionDistance,
-						ACTION_DISTANCE_AUTO);
-		this.scaleDownGravity = a.getFloat(
-				R.styleable.FancyCoverFlow_scaleDownGravity, 0.5f);
-		this.maxRotation = a.getInteger(R.styleable.FancyCoverFlow_maxRotation,
-				0);
-		this.unselectedAlpha = a.getFloat(
-				R.styleable.FancyCoverFlow_unselectedAlpha, 0.5f);
-		this.unselectedSaturation = a.getFloat(
-				R.styleable.FancyCoverFlow_unselectedSaturation, 0.0f);
-		this.unselectedScale = a.getFloat(
-				R.styleable.FancyCoverFlow_unselectedScale, 0.75f);
-	}
+    /**
+     * TODO: Write doc
+     *
+     * @return
+     */
+    public float getUnselectedAlpha() {
+        return this.unselectedAlpha;
+    }
 
-	public float getReflectionRatio() {
-		return reflectionRatio;
-	}
+    /**
+     * TODO: Write doc
+     *
+     * @return
+     */
+    public float getUnselectedScale() {
+        return unselectedScale;
+    }
 
-	public void setReflectionRatio(float reflectionRatio) {
-		if (reflectionRatio <= 0 || reflectionRatio > 0.5f) {
-			throw new IllegalArgumentException(
-					"reflectionRatio may only be in the interval (0, 0.5]");
-		}
+    /**
+     * TODO: Write doc
+     *
+     * @param unselectedScale
+     */
+    public void setUnselectedScale(float unselectedScale) {
+        this.unselectedScale = unselectedScale;
+    }
 
-		this.reflectionRatio = reflectionRatio;
+    /**
+     * TODO: Doc
+     *
+     * @return
+     */
+    public float getScaleDownGravity() {
+        return scaleDownGravity;
+    }
 
-		if (this.getAdapter() != null) {
-			((FancyCoverFlowAdapter) this.getAdapter()).notifyDataSetChanged();
-		}
-	}
+    /**
+     * TODO: Doc
+     *
+     * @param scaleDownGravity
+     */
+    public void setScaleDownGravity(float scaleDownGravity) {
+        this.scaleDownGravity = scaleDownGravity;
+    }
 
-	public int getReflectionGap() {
-		return reflectionGap;
-	}
+    /**
+     * TODO: Write doc
+     *
+     * @return
+     */
+    public int getActionDistance() {
+        return actionDistance;
+    }
 
-	public void setReflectionGap(int reflectionGap) {
-		this.reflectionGap = reflectionGap;
+    /**
+     * TODO: Write doc
+     *
+     * @param actionDistance
+     */
+    public void setActionDistance(int actionDistance) {
+        this.actionDistance = actionDistance;
+    }
 
-		if (this.getAdapter() != null) {
-			((FancyCoverFlowAdapter) this.getAdapter()).notifyDataSetChanged();
-		}
-	}
+    /**
+     * TODO: Write doc
+     *
+     * @param unselectedAlpha
+     */
+    @Override
+    public void setUnselectedAlpha(float unselectedAlpha) {
+        super.setUnselectedAlpha(unselectedAlpha);
+        this.unselectedAlpha = unselectedAlpha;
+    }
 
-	public boolean isReflectionEnabled() {
-		return reflectionEnabled;
-	}
+    /**
+     * TODO: Write doc
+     *
+     * @return
+     */
+    public float getUnselectedSaturation() {
+        return unselectedSaturation;
+    }
 
-	public void setReflectionEnabled(boolean reflectionEnabled) {
-		this.reflectionEnabled = reflectionEnabled;
-		if (this.getAdapter() != null) {
-			((FancyCoverFlowAdapter) this.getAdapter()).notifyDataSetChanged();
-		}
-	}
+    /**
+     * TODO: Write doc
+     *
+     * @param unselectedSaturation
+     */
+    public void setUnselectedSaturation(float unselectedSaturation) {
+        this.unselectedSaturation = unselectedSaturation;
+    }
 
-	@Override
-	public void setAdapter(SpinnerAdapter adapter) {
-		if (!(adapter instanceof FancyCoverFlowAdapter)) {
-			throw new ClassCastException(FancyCoverFlow.class.getSimpleName()
-					+ " only works in conjunction with a "
-					+ FancyCoverFlowAdapter.class.getSimpleName());
-		}
+    // =============================================================================
+    // Supertype overrides
+    // =============================================================================
 
-		super.setAdapter(adapter);
-	}
+    @Override
+    protected boolean getChildStaticTransformation(View child, Transformation t) {
+        // We can cast here because FancyCoverFlowAdapter only creates wrappers.
+        FancyCoverFlowItemWrapper item = (FancyCoverFlowItemWrapper) child;
 
-	public int getMaxRotation() {
-		return maxRotation;
-	}
+        // Since Jelly Bean childs won't get invalidated automatically, needs to be added for the smooth coverflow animation
+        if (android.os.Build.VERSION.SDK_INT >= 16) {
+            item.invalidate();
+        }
 
-	public void setMaxRotation(int maxRotation) {
-		this.maxRotation = maxRotation;
-	}
+        final int coverFlowWidth = this.getWidth();
+        final int coverFlowCenter = coverFlowWidth / 2;
+        final int childWidth = item.getWidth();
+        final int childHeight = item.getHeight();
+        final int childCenter = item.getLeft() + childWidth / 2;
 
-	public float getUnselectedAlpha() {
-		return this.unselectedAlpha;
-	}
+        // Use coverflow width when its defined as automatic.
+        final int actionDistance = (this.actionDistance == ACTION_DISTANCE_AUTO) ? (int) ((coverFlowWidth + childWidth) / 2.0f) : this.actionDistance;
 
-	public float getUnselectedScale() {
-		return unselectedScale;
-	}
+        // Calculate the abstract amount for all effects.
+        final float effectsAmount = Math.min(1.0f, Math.max(-1.0f, (1.0f / actionDistance) * (childCenter - coverFlowCenter)));
 
-	public void setUnselectedScale(float unselectedScale) {
-		this.unselectedScale = unselectedScale;
-	}
+        // Clear previous transformations and set transformation type (matrix + alpha).
+        t.clear();
+        t.setTransformationType(Transformation.TYPE_BOTH);
 
-	public float getScaleDownGravity() {
-		return scaleDownGravity;
-	}
+        // Alpha
+        if (this.unselectedAlpha != 1) {
+            final float alphaAmount = (this.unselectedAlpha - 1) * Math.abs(effectsAmount) + 1;
+            t.setAlpha(alphaAmount);
+        }
 
-	public void setScaleDownGravity(float scaleDownGravity) {
-		this.scaleDownGravity = scaleDownGravity;
-	}
+        // Saturation
+        if (this.unselectedSaturation != 1) {
+            // Pass over saturation to the wrapper.
+            final float saturationAmount = (this.unselectedSaturation - 1) * Math.abs(effectsAmount) + 1;
+            item.setSaturation(saturationAmount);
+        }
 
-	public int getActionDistance() {
-		return actionDistance;
-	}
+        final Matrix imageMatrix = t.getMatrix();
 
-	public void setActionDistance(int actionDistance) {
-		this.actionDistance = actionDistance;
-	}
+        // Apply rotation.
+        if (this.maxRotation != 0) {
+            final int rotationAngle = (int) (-effectsAmount * this.maxRotation);
+            this.transformationCamera.save();
+            this.transformationCamera.rotateY(rotationAngle);
+            this.transformationCamera.getMatrix(imageMatrix);
+            this.transformationCamera.restore();
+        }
 
-	@Override
-	public void setUnselectedAlpha(float unselectedAlpha) {
-		super.setUnselectedAlpha(unselectedAlpha);
-		this.unselectedAlpha = unselectedAlpha;
-	}
+        // Zoom.
+        if (this.unselectedScale != 1) {
+            final float zoomAmount = (this.unselectedScale - 1) * Math.abs(effectsAmount) + 1;
+            // Calculate the scale anchor (y anchor can be altered)
+            final float translateX = childWidth / 2.0f;
+            final float translateY = childHeight * this.scaleDownGravity;
+            imageMatrix.preTranslate(-translateX, -translateY);
+            imageMatrix.postScale(zoomAmount, zoomAmount);
+            imageMatrix.postTranslate(translateX, translateY);
+        }
 
-	public float getUnselectedSaturation() {
-		return unselectedSaturation;
-	}
+        return true;
+    }
 
-	public void setUnselectedSaturation(float unselectedSaturation) {
-		this.unselectedSaturation = unselectedSaturation;
-	}
+    // =============================================================================
+    // Public classes
+    // =============================================================================
 
-	public int preLeftOffset = 0;
-	public int count = 0;
-	public boolean isPlayDraw = true;
+    public static class LayoutParams extends Gallery.LayoutParams {
+        public LayoutParams(Context c, AttributeSet attrs) {
+            super(c, attrs);
+        }
 
-	@Override
-	protected boolean getChildStaticTransformation(View child, Transformation t) {
-		FancyCoverFlowItemWrapper item = (FancyCoverFlowItemWrapper) child;
+        public LayoutParams(int w, int h) {
+            super(w, h);
+        }
 
-		preLeftOffset = getChildAt(0).getLeft();
+        public LayoutParams(ViewGroup.LayoutParams source) {
+            super(source);
+        }
+    }
 
-		if (android.os.Build.VERSION.SDK_INT >= 16) {
-			item.postInvalidate();
-		}
 
-		final int coverFlowWidth = this.getWidth();
-		final int coverFlowCenter = coverFlowWidth / 2;
-		final int childWidth = item.getWidth();
-		final int childHeight = item.getHeight();
-		final int childCenter = item.getLeft() + childWidth / 2;
-
-		final int actionDistance = (this.actionDistance == ACTION_DISTANCE_AUTO) ? (int) ((coverFlowWidth + childWidth) / 2.0f)
-				: this.actionDistance;
-
-		float effectsAmount = Math.min(
-				1.0f,
-				Math.max(-1.0f, (1.0f / actionDistance)
-						* (childCenter - coverFlowCenter)));
-
-		t.clear();
-		t.setTransformationType(Transformation.TYPE_BOTH);
-
-		if (this.unselectedAlpha != 1) {
-			final float alphaAmount = (this.unselectedAlpha - 1)
-					* Math.abs(effectsAmount) + 1;
-			t.setAlpha(alphaAmount);
-		}
-
-		if (this.unselectedSaturation != 1) {
-			// Pass over saturation to the wrapper.
-			final float saturationAmount = (this.unselectedSaturation - 1)
-					* Math.abs(effectsAmount) + 1;
-			item.setSaturation(saturationAmount);
-		}
-
-		final Matrix imageMatrix = t.getMatrix();
-
-		// 旋转角度不为0则开始图片旋转.
-		if (this.maxRotation != 0) {
-			final int rotationAngle = (int) (-effectsAmount * this.maxRotation);
-			this.transformationCamera.save();
-			this.transformationCamera.rotateY(rotationAngle);
-			this.transformationCamera.getMatrix(imageMatrix);
-			this.transformationCamera.restore();
-		}
-
-		// 缩放.
-		if (this.unselectedScale != 1) {
-			final float zoomAmount = 1f / 2f * (1 - Math.abs(effectsAmount))
-					* (1 - Math.abs(effectsAmount))
-					* (1 - Math.abs(effectsAmount)) + 0.5f;
-			final float translateX = childWidth / 2.0f;
-			final float translateY = childHeight * this.scaleDownGravity;
-			imageMatrix.preTranslate(-translateX, -translateY);
-			imageMatrix.postScale(zoomAmount, zoomAmount);
-			imageMatrix.postTranslate(translateX, translateY);
-
-			if (effectsAmount != 0) {
-
-				double point = 0.4;
-				double translateFactor = (-1f / (point * point)
-						* (Math.abs(effectsAmount) - point)
-						* (Math.abs(effectsAmount) - point) + 1)
-						* (effectsAmount > 0 ? 1 : -1);
-
-				imageMatrix
-						.postTranslate(
-								(float) (ViewUtil.Dp2Px(getContext(), 25) * translateFactor),
-								0);
-
-			}
-
-		}
-
-		return true;
-	}
-
-	// 绘制顺序，先从左到中间，再从右到中间
-	@Override
-	protected int getChildDrawingOrder(int childCount, int i) {
-
-		int selectedIndex = getSelectedItemPosition()
-				- getFirstVisiblePosition();
-
-		if (i < selectedIndex) {
-			return i;
-		} else if (i >= selectedIndex) {
-			return childCount - 1 - i + selectedIndex;
-		} else {
-			return i;
-		}
-	}
-
-	private boolean isTouchAble = true;
-
-	public void disableTouch() {
-		isTouchAble = false;
-	}
-
-	public void enableTouch() {
-		isTouchAble = true;
-	}
-
-	public boolean isTouchAble() {
-		return isTouchAble;
-	}
-
-	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		count = 0;
-		for (int i = 0; i < getChildCount(); i++) {
-			getChildAt(i).invalidate();
-		}
-
-		if (isTouchAble) {
-			return super.onTouchEvent(event);
-		} else {
-			return false;
-		}
-	}
-
-	@Override
-	public boolean onInterceptTouchEvent(MotionEvent event) {
-		if (isTouchAble) {
-			return super.onInterceptTouchEvent(event);
-		} else {
-			return true;
-		}
-	}
-
-	//
-	// @Override
-	// public boolean onSingleTapUp(MotionEvent e) {
-	// return false;
-	// }
-
-	// 使快速滑动失效
-	@Override
-	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-			float velocityY) {
-		return false;
-	}
-
+//	@Override
+//	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+//			float velocityY) {
+//		// TODO Auto-generated method stub
+//		if (e1.getX()>e2.getX()&&getSelectedItemPosition()==getCount()-1) {
+//			setSelection(0);
+//		}else if(e1.getX()<e2.getX()&&getSelectedItemPosition()==0){
+//			setSelection(getCount()-1);
+//		}
+//		System.out.println("onFling"+getSelectedItemPosition());
+//		return super.onFling(e1, e2, velocityX, velocityY);
+//	}
+//
+//	@Override
+//	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+//			float distanceY) {
+//		// TODO Auto-generated method stub
+////		System.out.println("onScroll"+getSelectedItemPosition());
+//		return super.onScroll(e1, e2, distanceX, distanceY);
+//	}
+    
+    
 }

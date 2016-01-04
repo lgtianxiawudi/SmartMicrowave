@@ -27,7 +27,7 @@
             </shape>
         </clip>
     </item>
-    <item android:id="@android:id/progress" android:drawable="@drawable/progress_indeterminate_horizontal">
+    <item android:id="@android:id/progress" android:drawable="@drawable/progress_indeterminate_horizontal1">
         <clip>
             <shape>
                 <corners android:radius="5dip" />

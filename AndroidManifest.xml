@@ -2,18 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ctl.smart.microwave"
     coreApp="true"
-    android:versionCode="1"
-    android:versionName="1.0">
+    android:sharedUserId="android.uid.system"
+    android:versionCode="2"
+    android:versionName="0.3.13">
     
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
 
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
     <application
-        android:name="com.ctl.smart.microwave.application.SmartApplication"
+        android:name="com.ctl.smart.microwave.activity.Application"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
@@ -24,12 +26,18 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+               <category android:name="android.intent.category.HOME" />
+               <category android:name="android.intent.category.DEFAULT" />
+               <category android:name="android.intent.category.MONKEY"/>
             </intent-filter>
         </activity>
         <activity
             android:name="com.ctl.smart.microwave.activity.MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.ctl.smart.microwave.activity.ErrorActivity"
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
         </activity>
@@ -90,11 +98,6 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="com.ctl.smart.microwave.reheart.PreperHearActivity"
-            android:label="@string/app_name" 
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
             android:name="com.ctl.smart.microwave.reheart.PreperHearFinish"
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
@@ -120,20 +123,11 @@
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
         </activity>
-        
-        
         <activity
             android:name="com.ctl.smart.microwave.snack.FirstLevelSnackActivity"
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
         </activity>
-        <activity
-            android:name="com.ctl.smart.microwave.snack.SecondLevelSnackActivity"
-            android:label="@string/app_name" 
-            android:screenOrientation="portrait">
-        </activity>
-        
-        
         <activity
             android:name="com.ctl.smart.microwave.ferment.SecondLevelFermentActivity"
             android:label="@string/app_name" 
@@ -162,11 +156,6 @@
         
         <activity
             android:name="com.ctl.smart.microwave.healthybaby.FirstLevelHealthyBabyActivity"
-            android:label="@string/app_name" 
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="com.ctl.smart.microwave.healthybaby.SecondLevelHealthyBabyActivity"
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
         </activity>
@@ -277,7 +266,14 @@
             android:label="@string/app_name" 
             android:screenOrientation="portrait">
         </activity>
+
+        <activity
+            android:name="com.ctl.smart.microwave.setting.ResetActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+        </activity>
         
+         <service android:name="com.ctl.smart.microwave.service.MicroWaveService" android:enabled="true" />
     </application>
 
 </manifest>

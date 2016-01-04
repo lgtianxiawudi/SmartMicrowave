@@ -44,13 +44,13 @@
     <string name="position_remind">Shelf position</string>
     <string name="back_remind">Do you want to stop cooking and return to the higher menu？</string>
     <string-array name="week">
+    	<item>Sunday</item>
         <item>Monday</item>
         <item>Tuesday</item>
         <item>Wednesday</item>
         <item>Thursday</item>
         <item>Friday</item>
         <item>Saturday</item>
-        <item>Sunday</item>
     </string-array>
 
     <!-- child -->
@@ -58,7 +58,7 @@
     <string name="save">favorite</string>
     <string name="delete_fav">delete</string>
     <string name="save_fav_toase">You collect the </string>
-    <string name="delete_fav_toase">You delete the collection </string>
+    <string name="delete_fav_toase">You have already collected. </string>
     <string name="remind">remind</string>
     <string name="remind_message">Are you sure to delete collection </string>
     <!-- child auto menu -->
@@ -110,11 +110,11 @@
         <item >Food</item>
     </string-array>
     <string-array name="auton_menu_level4">
-        <item>100\ng</item>
-        <item>200\ng</item>
-        <item>300\ng</item>
-        <item>400\ng</item>
-        <item>500\ng</item>
+        <item>100g</item>
+        <item>200g</item>
+        <item>300g</item>
+        <item>400g</item>
+        <item>500g</item>
     </string-array>
     <!-- child reheart menu -->
     <string-array name="reheart_level1">
@@ -180,11 +180,11 @@
         <item>Microwave+Steam•Maintain moisture</item>
     </string-array>
     <string-array name="defrost_level2">
-        <item>100\ng</item>
-        <item>200\ng</item>
-        <item>300\ng</item>
-        <item>400\ng</item>
-        <item>500\ng</item>
+        <item>100g</item>
+        <item>200g</item>
+        <item>300g</item>
+        <item>400g</item>
+        <item>500g</item>
     </string-array>
     
     <!-- snacks menu -->
@@ -202,11 +202,11 @@
         <item>Cream cheese and crackers</item>
     </string-array>
     <string-array name="snacks_level2">
-        <item>100\ng</item>
-        <item>200\ng</item>
-        <item>300\ng</item>
-        <item>400\ng</item>
-        <item>500\ng</item>
+        <item>100g</item>
+        <item>200g</item>
+        <item>300g</item>
+        <item>400g</item>
+        <item>500g</item>
     </string-array>
     
     <!-- ferment menu -->
@@ -215,11 +215,11 @@
         <item>Dough</item>
     </string-array>
     <string-array name="ferment_level2">
-        <item>100\ng</item>
-        <item>200\ng</item>
-        <item>300\ng</item>
-        <item>400\ng</item>
-        <item>500\ng</item>
+        <item>100g</item>
+        <item>200g</item>
+        <item>300g</item>
+        <item>400g</item>
+        <item>500g</item>
     </string-array>
     
     <!-- healthybaby menu -->
@@ -229,11 +229,11 @@
         <item>Baby puree</item>
     </string-array>
     <string-array name="healthybaby_level2">
-        <item>100\ng</item>
-        <item>200\ng</item>
-        <item>300\ng</item>
-        <item>400\ng</item>
-        <item>500\ng</item>
+        <item>100g</item>
+        <item>200g</item>
+        <item>300g</item>
+        <item>400g</item>
+        <item>500g</item>
     </string-array>
     
     <!-- settings menu -->
@@ -298,6 +298,162 @@
 	<string name="warm_time1">5 minute</string>
 	<string name="warm_time2">10 minute</string>
 	<string name="warm_time3">15 minute</string>
+	<string name="favorite_lab">name</string>
+	<string name="favorite_mode">mode</string>
+	<string name="favorite_date">date</string>
+	<string name="favorite_empty">no favorite</string>
+	<string name="error_info">机器故障</string>
+	<string name="error_help">(请联系售后)</string>
+	<string name="error_scontent">----------E01-------------</string>
+	<string name="fm_title">请翻面！</string>
+	<string name="fm_jj">翻面后解冻效果会更好哦～</string>
+	<string name="type_jj">预热的情况下，如放入食物加热，则烹饪效果不是很好喔~</string>
     
     <string name="clean_detail">水＋醋，比例为10:1（？）</string>
+    
+    
+    <string-array name="bottom14">
+        <item >bottom14_00001</item>
+        <item >bottom14_00003</item>
+        <item >bottom14_00005</item>
+        <item >bottom14_00007</item>
+        <item >bottom14_00009</item>
+        <item >bottom14_00011</item>
+        <item >bottom14_00013</item>
+        <item >bottom14_00015</item>
+        <item >bottom14_00017</item>
+        <item >bottom14_00019</item>
+        <item >bottom14_00021</item>
+        <item >bottom14_00023</item>
+        
+    </string-array>
+    <string-array name="bottom15">
+        <item >bottom15_00005</item>
+        <item >bottom15_00007</item>
+        <item >bottom15_00009</item>
+        <item >bottom15_00011</item>
+        <item >bottom15_00013</item>
+        <item >bottom15_00015</item>
+        <item >bottom15_00017</item>
+        <item >bottom15_00019</item>
+        <item >bottom15_00021</item>
+        <item >bottom15_00023</item>
+        
+    </string-array>
+
+    <string-array name="bottom16">
+        <item >bottom16_00003</item>
+        <item >bottom16_00005</item>
+        <item >bottom16_00007</item>
+        <item >bottom16_00009</item>
+        <item >bottom16_00011</item>
+        <item >bottom16_00013</item>
+        <item >bottom16_00015</item>
+        <item >bottom16_00017</item>
+        <item >bottom16_00019</item>
+        <item >bottom16_00021</item>
+        <item >bottom16_00023</item>
+    </string-array>
+
+        <!-- 
+  <string-array name="bottom16">
+        <item >bottom16_00001</item>
+        <item >bottom16_00001</item>
+        <item >bottom16_00001</item>
+        <item >bottom16_00001</item>
+        <item >bottom16_00001</item>
+        <item >bottom16_00001</item>
+        <item >bottom16_00025</item>
+        <item >bottom16_00025</item>
+        <item >bottom16_00025</item>
+        <item >bottom16_00025</item>
+        <item >bottom16_00025</item>
+        <item >bottom16_00025</item>
+        <item >bottom16_00026</item>
+        <item >bottom16_00026</item>
+        <item >bottom16_00026</item>
+        <item >bottom16_00026</item>
+        <item >bottom16_00026</item>
+        <item >bottom16_00026</item>
+        <item >bottom16_00027</item>
+        <item >bottom16_00027</item>
+        <item >bottom16_00027</item>
+        <item >bottom16_00027</item>
+        <item >bottom16_00027</item>
+        <item >bottom16_00027</item>
+        <item >bottom16_00028</item>
+        <item >bottom16_00028</item>
+        <item >bottom16_00028</item>
+        <item >bottom16_00028</item>
+        <item >bottom16_00028</item>
+        <item >bottom16_00028</item>
+        <item >bottom16_00029</item>
+        <item >bottom16_00029</item>
+        <item >bottom16_00029</item>
+        <item >bottom16_00029</item>
+        <item >bottom16_00029</item>
+        <item >bottom16_00029</item>
+    </string-array>
+        -->
+    
+    <string-array name="bottom134">
+        <item >bottom134_00001</item>
+        <item >bottom134_00003</item>
+        <item >bottom134_00005</item>
+        <item >bottom134_00007</item>
+        <item >bottom134_00009</item>
+        <item >bottom134_00011</item>
+        <item >bottom134_00013</item>
+        <item >bottom134_00015</item>
+        <item >bottom134_00017</item>
+        <item >bottom134_00019</item>
+        <item >bottom134_00021</item>
+        <item >bottom134_00023</item>
+        
+    </string-array>
+    <string-array name="bottom1">
+        <item >bottom1_00001</item>
+        <item >bottom1_00003</item>
+        <item >bottom1_00005</item>
+        <item >bottom1_00007</item>
+        <item >bottom1_00009</item>
+        <item >bottom1_00011</item>
+        <item >bottom1_00013</item>
+        <item >bottom1_00015</item>
+        <item >bottom1_00017</item>
+        <item >bottom1_00019</item>
+        <item >bottom1_00021</item>
+        <item >bottom1_00023</item>
+        
+    </string-array>
+    <string-array name="bottom4">
+        <item >bottom4_00001</item>
+        <item >bottom4_00003</item>
+        <item >bottom4_00005</item>
+        <item >bottom4_00007</item>
+        <item >bottom4_00009</item>
+        <item >bottom4_00011</item>
+        <item >bottom4_00013</item>
+        <item >bottom4_00015</item>
+        <item >bottom4_00017</item>
+        <item >bottom4_00019</item>
+        <item >bottom4_00021</item>
+        <item >bottom4_00023</item>
+        
+    </string-array>
+    <string-array name="bottom5">
+        <item >bottom5_00001</item>
+        <item >bottom5_00003</item>
+        <item >bottom5_00005</item>
+        <item >bottom5_00007</item>
+        <item >bottom5_00009</item>
+        <item >bottom5_00011</item>
+        <item >bottom5_00013</item>
+        <item >bottom5_00015</item>
+        <item >bottom5_00017</item>
+        <item >bottom5_00019</item>
+        <item >bottom5_00021</item>
+        <item >bottom5_00023</item>
+        
+    </string-array>
 </resources>

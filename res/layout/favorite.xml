@@ -2,24 +2,93 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
-    android:background="@color/bg_light">
+    android:background="@color/bg_light"
+    android:orientation="vertical" >
 
-    <include
+    <RadioGroup
+        android:id="@+id/choice_type"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/head" />
+        android:layout_height="60dip" 
+        android:orientation="horizontal">
+        <RadioButton 
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:button="@null"
+            android:layout_weight="1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/choice_type1"
+            android:checked="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/radio_textcolor"
+            android:textSize="21dp"
+            android:background="@drawable/radio_textbg_color"
+            android:text="@string/favorite_lab"
+            />
+        <TextView 
+            android:id="@+id/left"
+            android:layout_width="3dip"
+            android:visibility="invisible"
+            android:layout_height="fill_parent"
+            android:background="@drawable/line"/>
+        <RadioButton 
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:button="@null"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/choice_type2"
+            android:textColor="@color/radio_textcolor"
+            android:textSize="21dp"
+            android:background="@drawable/radio_textbg_color"
+            android:text="@string/favorite_mode"
+            />
+        <TextView 
+            android:id="@+id/right"
+            android:layout_width="3dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/line"/>
+        
+        <RadioButton 
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:layout_height="fill_parent"
+            android:button="@null"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/choice_type3"
+            android:textColor="@color/radio_textcolor"
+            android:textSize="21dp"
+            android:background="@drawable/radio_textbg_color"
+            android:text="@string/favorite_date"
+            />
+    </RadioGroup>
 
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="7" >
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
             android:orientation="vertical" >
+            
+            <TextView 
+                android:id="@+id/nodata"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:background="#FFFFFF"
+                android:text="@string/favorite_empty"/>
 
             <ListView
                 android:id="@+id/lvContact"
@@ -27,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:scrollbars="none" >
             </ListView>
-        </LinearLayout>
+        </FrameLayout>
 
         <com.ctl.smart.microwave.views.SideBar
             android:id="@+id/sideBar"
