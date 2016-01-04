@@ -59,7 +59,7 @@ public class FirstCavitycleanActivity extends AbActivity implements OnClickListe
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		name=getString(R.string.cavity_clean);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-				.setback_mainListener().setOkListener(this);
+				.setback_mainListener();
 		HeadUtil headUtil = new HeadUtil(this).setTitleName(name);
 		WheelUtils.initWheelDatePicker(this, hour, mint, send);
 		remind.setVisibility(View.INVISIBLE);

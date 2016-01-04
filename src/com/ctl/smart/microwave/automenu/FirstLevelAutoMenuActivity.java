@@ -32,7 +32,7 @@ public class FirstLevelAutoMenuActivity extends AbActivity implements OnClickLis
 		super.onCreate(back_maindInstanceState);
 		setAbContentView(R.layout.level);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener().setOkListener(this);
+		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener();
 		HeadUtil headUtil=new HeadUtil(this,true).setTitleName(getString(R.string.automatic_menu));
 		
 		item=getResources().getStringArray(R.array.auton_menu_level1);

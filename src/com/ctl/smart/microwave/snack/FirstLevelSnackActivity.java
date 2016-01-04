@@ -38,8 +38,7 @@ public class FirstLevelSnackActivity extends AbActivity implements
 		setAbContentView(R.layout.level);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		name = getString(R.string.snacks);
-		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-				.setOkListener(this);
+		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener();
 		HeadUtil headUtil = new HeadUtil(this, true).setTitleName(name);
 
 		item = ExcelUtil.getKindsByKey(name);

@@ -34,7 +34,7 @@ public class FirstLevelDefrostActivity extends AbActivity implements
 		setAbContentView(R.layout.level);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-				.setOkListener(this);
+				;
 		HeadUtil headUtil = new HeadUtil(this,true)
 				.setTitleName(getString(R.string.thaw));
 

@@ -20,16 +20,14 @@
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:background="@drawable/botton_btn_two"
         android:orientation="horizontal" >
 
         <ImageButton
             android:id="@+id/back_main"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
-            android:layout_marginRight="5dip"
             android:layout_weight="1"
-            android:background="@drawable/botton_btn"
+            android:background="@drawable/main_button_bg"
             android:padding="10dip"
             android:scaleType="centerInside"
             android:src="@drawable/save"
@@ -40,7 +38,7 @@
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="@drawable/botton_btn"
+            android:background="@drawable/main_button_bg"
             android:padding="10dip"
             android:scaleType="centerInside"
             android:src="@drawable/back_logo"

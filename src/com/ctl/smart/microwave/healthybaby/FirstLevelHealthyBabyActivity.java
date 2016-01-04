@@ -40,7 +40,7 @@ public class FirstLevelHealthyBabyActivity extends AbActivity implements
 		name = getString(R.string.healthy_baby);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-				.setOkListener(this);
+				;
 		HeadUtil headUtil = new HeadUtil(this,true).setTitleName(name);
 
 		item = ExcelUtil.getKindsByKey(name);

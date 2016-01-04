@@ -55,7 +55,7 @@ OnClickListener{
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.time_setting);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-				.setback_mainListener().setOkListener(this);
+				.setback_mainListener();
 		bundle = getIntent().getExtras();
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		if (bundle != null) {

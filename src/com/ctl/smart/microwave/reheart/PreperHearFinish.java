@@ -42,7 +42,7 @@ public class PreperHearFinish extends AbActivity implements OnClickListener {
 										PreperHearFinish.this, MainActivity.class);
 								StartActivityUtil.clearActivity();
 							}
-						}).setOkListener(this);
+						});
 		bundle = getIntent().getExtras();
 
 		if (bundle != null) {

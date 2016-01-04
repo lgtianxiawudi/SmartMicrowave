@@ -33,7 +33,7 @@ public class FermentPositionActivity extends AbActivity implements OnClickListen
 		HeadUtil headUtil = new HeadUtil(this).setTitleName(name);
 		
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-				.setOkListener(this);
+				;
 	}
 
 	@Override

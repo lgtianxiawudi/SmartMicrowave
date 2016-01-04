@@ -42,7 +42,7 @@ public class SecondLevelDefrostActivity extends AbActivity implements
 		setAbContentView(R.layout.level);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-				.setback_mainListener().setOkListener(this);
+				.setback_mainListener();
 		bundle = getIntent().getExtras();
 
 		if (bundle != null) {

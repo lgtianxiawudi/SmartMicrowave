@@ -39,7 +39,7 @@ public class ChoiceTypeReHeartActivity extends AbActivity implements OnClickList
 		}
 		HeadUtil headUtil = new HeadUtil(this).setTitleName(name);
 		BottomUtilTwo bottomUtilTwo = new BottomUtilTwo(this).setBackListener()
-				.setback_mainListener().setOkListener(this);
+				.setback_mainListener();
 	type_select.setOnCheckedChangeListener(this);
 			Log.e("lwxdebug", " ChoiceTypeReHeartActivity");
 	}
