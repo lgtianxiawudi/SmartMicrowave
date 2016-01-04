@@ -38,9 +38,9 @@ public class RefreshProgress extends View {
 
 	private Bitmap cirCleBitmap = null;
 
-	private int startColor = Color.parseColor("#00A8D7A7");
+	private int startColor = Color.argb(255, 129, 132, 135);
 
-	private int endColor = Color.parseColor("#ffA8D7A7");
+	private int endColor = Color.argb(255, 255, 255, 255);
 
 	private RectF rectF = null;
 
@@ -78,9 +78,9 @@ public class RefreshProgress extends View {
 				
 			}
 
-			startColor = a.getColor(R.styleable.RefreshProgress_startColor, Color.parseColor("#00A8D7A7"));
+			startColor = a.getColor(R.styleable.RefreshProgress_startColor, Color.argb(255, 129, 132, 135));
 
-			endColor = a.getColor(R.styleable.RefreshProgress_startColor, Color.parseColor("#ffA8D7A7"));
+			endColor = a.getColor(R.styleable.RefreshProgress_startColor, Color.argb(255, 255, 255, 255));
 
 			a.recycle();
 		}
